@@ -1,0 +1,469 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Indigo</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="https://unpkg.com/feather-icons"></script> <!-- Ikony Feather pro hamburger menu -->
+    <script defer>
+        document.addEventListener("DOMContentLoaded", function () {
+            const menuToggle = document.getElementById("menu-toggle");
+            const menuItems = document.getElementById("menu-items");
+
+            menuToggle.addEventListener("click", function () {
+                menuItems.classList.toggle("hidden");
+            });
+        });
+    </script>
+    <style>
+        .columns-1 {
+            column-count: 1;
+        }
+
+        @media (min-width: 640px) {
+            .sm\:columns-2 {
+                column-count: 2;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .lg\:columns-3 {
+                column-count: 3;
+            }
+        }
+
+        .break-inside-avoid {
+            break-inside: avoid;
+        }
+    </style>
+</head>
+
+<body class="bg-background">
+    <nav class="flex flex-col ">
+        <!-- Navbar -->
+        <div class="flex flex-row justify-between items-center h-16 px-4 text-textWhite">
+            <!-- Logo -->
+            <div class="flex items-center space-x-4 relative z-20">
+                <svg class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path d="M12 8v8M8 12h8" />
+                </svg>
+                <p>INDIGO</p>
+            </div>
+
+            <!-- Hamburger Menu Button -->
+            <button id="menu-toggle" class="md:hidden focus:outline-none">
+                <svg id="menu-icon" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                    stroke="currentColor">
+                    <path d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+
+            <!-- Contact - hidden on mobile -->
+            <div class="hidden md:flex relative z-20">
+                <!-- socials -->
+                <div class="flex text-[20px] gap-x-3 max-w-max mx-auto lg:mx-0">
+                    <a href="https://github.com/petrovcikovadiana" class="w-6 h-6 flex items-center justify-center">
+                        <img src="./img/fb.svg" alt="facebook" />
+                    </a>
+                    <a href="https://www.linkedin.com/in/diana-petrov%C4%8D%C3%ADkov%C3%A1-a6034a1b2/"
+                        class="w-6 h-6 flex items-center justify-center">
+                        <img src="./img/ig.svg" alt="facebook" />
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Menu Items -->
+        <div id="menu-items"
+            class="md:flex md:h-16 items-center w-full justify-start md:justify-center md:absolute z-10 hidden ">
+            <ul class="flex flex-col md:flex-row md:space-x-4 items-start pl-5">
+                <li><a href="/home" class="block py-2 px-4  text-textWhite">Domů</a></li>
+                <li><a href="/hours" class="block py-2 px-4  text-textWhite">O nás</a></li>
+                <li><a href="/support" class="block py-2 px-4  text-textWhite">Ceník</a></li>
+                <li><a href="/about" class="block py-2 px-4  text-textWhite">Služby</a></li>
+                <li><a href="/services" class="block py-2 px-4  text-textWhite">Galerie</a></li>
+                <li><a href="/contact" class="block py-2 px-4  text-textWhite">Kontakt</a></li>
+            </ul>
+        </div>
+    </nav>
+    <main>
+        <section class="min-h-[85vh] lg:min-h-[78vh] flex items-center md:pt-44 mb-10 overflow-y-hidden ">
+            <div class="md:container mx-auto flex flex-row md:px-44 md:gap-32">
+                <!-- left container -->
+                <div class="flex flex-col gap-y-8 md:gap-x-12">
+                    <!-- introduction text -->
+                    <div class="flex-1 text-center items-center font-primary lg:text-left">
+                        <div class="flex flex-row gap-2 text-center items-center">
+                            <hr class="hidden md:block h-px w-32 bg-textGrey border-0">
+                            <p class="text-sm text-textGrey items-center leading-[0.8] uppercase mx-auto md:mx-0">
+                                Od roku 2019
+                            </p>
+                        </div>
+
+                        <div class="text-[36px] lg:text-[60px] my-2 font-primary font-bold uppercase leading-[1]">
+                            <span class="text-goldenYellow ">Barbershop</span>
+                            <br />
+                            <span class="text-textWhite mr-4">Indigo</span>
+                        </div>
+                        <h2 class="mb-8 max-w-lg text-xl mx-auto lg:mx-0 text-textWhite">
+                            Každý střih je krokem k většímu sebevědomí.
+                        </h2>
+                        <div class="flex max-w-max gap-x-6 items-center mb-6 mx-auto lg:mx-0">
+                            <!-- button -->
+                            <a href="#contact">
+                                <button
+                                    class="w-36 h-10 relative overflow-hidden bg-goldenYellow text-background before:ease relative before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40">
+                                    <span relative="relative z-10 ">Kontaktujte nás</span>
+                                </button>
+                            </a>
+                        </div>
+
+                    </div>
+                </div>
+                <!-- right container -->
+                <div class="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]">
+                    <div class="hidden md:flex">
+                        <div class="">
+                            <img src="./img/9bba0e56c589fb3e06191969202abb446327a86a (1).png" alt="hero"
+                                class="flex mt-1 opacity-60">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- abouts us section -->
+
+    <section class="min-h-[85vh] lg:min-h-[78vh]  items-center mb-10 overflow-y-hidden">
+        <div class="flex flex-col items-center justify-center mx-auto mb-10">
+            <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">O nás</h3>
+            <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
+        </div>
+
+        <div class="md:container mx-auto flex flex-row md:px-44 md:gap-32">
+            <!-- right container -->
+            <div class="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]">
+                <div class="hidden md:flex gap-4">
+                    <div class=" ">
+                        <img src="./img/left.jpeg" alt="placeholder" class="flex mt-1 h-80 w-64 object-cover">
+                    </div>
+                    <div class=" rounded-t-full">
+                        <img src="./img/right.jpeg" alt="placeholder"
+                            class="flex mt-1 rounded-t-full h-80 w-64 object-cover">
+                    </div>
+                </div>
+            </div>
+            <!-- left container -->
+            <div class="flex flex-col gap-y-8 md:items-center md:gap-x-12">
+                <!-- introduction text -->
+                <div class="flex-1 text-center font-primary lg:text-left">
+                    <p class="text-sm text-textGrey mb-2 leading-[0.8]">
+                        <span>BARBERSHOP OD ROKU 2019</span>
+                    </p>
+                    <div class="text-4xl font-primary font-bold uppercase leading-[1] mb-6">
+                        <span class="text-textWhite">Tradice v
+                            moderním</span>
+                        <br />
+                        <span class="text-textWhite"> stylu</span>
+                    </div>
+                    <h3 class="mb-8 max-w-lg text-textWhite mx-auto px-10 md:px-0 lg:mx-0">
+                        Jsme hrdí na svou práci a naším cílem je poskytovat špičkové služby každému, kdo vstoupí do
+                        našich dveří. U nás zažijete nejen dokonalý střih a úpravu vousů, ale i relaxační atmosféru, kde
+                        si můžete odpočinout a užít si chvíli pro sebe.
+                    </h3>
+                    <div class="flex max-w-max gap-x-6 items-center justify-center mb-6 mx-auto lg:mx-0">
+                        <div class="flex flex-col items-center">
+                            <h2 class="font-serif text-4xl font-medium text-goldenYellow">
+                                5+ </h2>
+
+                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                                Let zkušeností </p>
+                        </div>
+                        <!-- vertical line -->
+                        <div class="inline-block h-16 min-h-[1em] w-0.5 self-stretch bg-goldenYellow ">
+                        </div>
+                        <div class="flex flex-col items-center">
+                            <h2 class="font-serif text-4xl font-medium text-goldenYellow">
+                                1000k </h2>
+
+                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                                Spokojených zákazníků </p>
+
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+    <!-- pricing section -->
+    <section>
+        <div className="flex md:flex-row flex-col gap-4 mx-auto md:w-full justify-center">
+            <!-- title -->
+            <div class="flex flex-col items-center justify-center mx-auto">
+                <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Ceník</h3>
+                <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
+            </div>
+            <div class="flex w-96 md:w-[600px] mx-auto rounded-xl my-16 border-2 border-goldenYellow">
+                <div class="w-full bg-background rounded-2xl m-8 md:m-10">
+                    <div class="flex flex-col items-center mx-auto">
+                        <img src="./img/face.png" alt="face" class="object-fit h-24 md:h-32 md:w-32 " />
+                    </div>
+                    <div class="flex flex-row justify-between mb-2">
+                        <div class="flex flex-col ">
+                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
+                                Stříhání </h2>
+
+                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                                Lorem ipsum dolor sit amet
+                            </p>
+
+
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-md text-goldenYellow justify-center">
+                                450 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[520px] bg-textGrey border-0 mb-2">
+                    <div class="flex flex-row justify-between mb-2">
+                        <div class="flex flex-col ">
+                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
+                                Stříhání </h2>
+
+                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                                Lorem ipsum dolor sit amet
+                            </p>
+
+
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-md text-goldenYellow justify-center">
+                                450 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[520px] bg-textGrey border-0 mb-2">
+
+                    <div class="flex flex-row justify-between mb-2">
+                        <div class="flex flex-col ">
+                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
+                                Stříhání </h2>
+
+                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                                Lorem ipsum dolor sit amet
+                            </p>
+
+
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-md text-goldenYellow justify-center">
+                                450 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[520px] bg-textGrey border-0 mb-2">
+
+                    <div class="flex flex-row justify-between mb-2">
+                        <div class="flex flex-col ">
+                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
+                                Stříhání </h2>
+
+                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                                Lorem ipsum dolor sit amet
+                            </p>
+
+
+                        </div>
+                        <div class="flex flex-col justify-center">
+                            <p class="text-md text-goldenYellow justify-center">
+                                450 Kč
+                            </p>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- our team section -->
+    <section>
+        <div className="flex md:flex-row flex-col gap-4 mx-auto md:w-full justify-center">
+            <!-- title -->
+            <div class="flex flex-col items-center justify-center mx-auto">
+                <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Náš tým</h3>
+                <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
+            </div>
+            <!-- card -->
+
+            <div
+                class="flex w-96 h-96 md:h-64 md:w-[600px] mx-auto rounded-tl-full rounded-bl-full rounded-tr-full bg-lightBlack my-24 ">
+                <div class="w-full m-8 md:m-10">
+
+                    <div class="flex md:flex-row flex-col mb-2">
+                        <div class="flex flex-col flex-1">
+                            <img src="./img/antonio.jpg" alt="face"
+                                class="rounded-full object-cover h-24 w-24 md:h-48 md:w-48 " />
+                        </div>
+                        <div class="flex flex-col flex-1 justify-center text-goldenYellow">
+                            <h3>Jan Novotný</h3>
+                            <p class="text-md text-textWhite justify-center">
+                                Jan se holičství věnuje více než 10 let a specializuje se na klasické pánské účesy a
+                                precizní úpravu vousů. Jeho pozornost k detailu a cit pro styl dělají z každého střihu
+                                jedinečný zážitek.
+                            </p>
+                            <p>signature</p>
+                        </div>
+                    </div>
+
+                    <div class="flex flex-row gap-6 mt-10 items-center justify-center mx-auto">
+                        <img src="./img/ADB2020D-94F7-4B62-8759-375DBF9225B9.jpeg" alt="Image 1"
+                            class=" object-cover w-16 rounded-full">
+                        <img src="./img/ADB2020D-94F7-4B62-8759-375DBF9225B9.jpeg" alt="Image 1"
+                            class=" object-cover w-16 rounded-full">
+                        <img src="./img/ADB2020D-94F7-4B62-8759-375DBF9225B9.jpeg" alt="Image 1"
+                            class=" object-cover w-16 rounded-full">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+    <!-- gallery section -->
+    <section>
+
+        <div class="flex items-center justify-center min-h-screen bg-lightBlack">
+
+            <div class="bg-lightBlack p-6 m-3 space-y-6 md:p-24">
+                <!-- title -->
+                <div class="flex flex-col items-center justify-center mx-auto">
+                    <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Galerie</h3>
+                    <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
+                </div>
+                <div class="flex flex-col justify-between space-y-5 md:flex-row md:space-y-0"></div>
+
+                <div class="grid gap-5 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3">
+                    <div class="relative group">
+                        <img src="img/antonio.jpg" alt="" class="w-72 rounded-xl" />
+
+                    </div>
+
+                    <div class="relative group">
+                        <img src="img/antonio.jpg" alt="" class="w-72 rounded-xl" />
+
+                    </div>
+
+                    <div class="relative group">
+                        <img src="img/antonio.jpg" alt="" class="w-72 rounded-xl" />
+
+                    </div>
+
+                    <div class="relative group">
+                        <img src="img/antonio.jpg" alt="" class="w-72 rounded-xl" />
+
+                    </div>
+
+                    <div class="relative group">
+                        <img src="img/antonio.jpg" alt="" class="w-72 rounded-xl" />
+
+                    </div>
+
+                    <div class="relative group">
+                        <img src="img/antonio.jpg" alt="" class="w-72 rounded-xl" />
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-background">
+        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+            <div class="md:flex items-center">
+                <div class="mb-6 md:mb-0">
+                    <a href="https://eclipse.cloudylake.io/" class="flex items-center">
+
+                        <span class="self-center text-md font-semibold whitespace-nowrap text-textWhite ml-5">
+                            Barbershop Indigo
+                        </span>
+                    </a>
+                </div>
+                <div class="flex md:flex-row flex-col gap-10 items-center mx-auto">
+                    <div class="flex flex-row gap-5 items-center">
+                        <h2 class=" text-sm font-semibold text-goldenYellow">
+                            Otevírací doba
+                        </h2>
+                        <div class="flex flex-col text-textWhite">
+                            <p>Po - Pá : 8:00 - 18:00</p>
+                            <p>So : 8:00 - 13:00</p>
+                        </div>
+
+                    </div>
+                    <div class="inline-block h-10 min-h-[1em] w-0.5 self-stretch bg-lineGrey">
+                    </div>
+                    <div class="flex flex-row gap-5 items-center">
+                        <h2 class=" text-sm font-semibold text-goldenYellow">
+                            Adresa
+                        </h2>
+                        <div class="flex flex-col text-textWhite">
+                            <p>Parížská 524/1,</p>
+                            <p>Mladá Boleslav 09 299</p>
+                        </div>
+
+                    </div>
+                    <div class="inline-block h-10 min-h-[1em] w-0.5 self-stretch bg-lineGrey">
+                    </div>
+                    <div class="flex flex-col">
+                        <div class="flex flex-row gap-5 ">
+                            <h2 class=" text-sm font-semibold text-goldenYellow">
+                                Email
+                            </h2>
+
+                            <div class="flex flex-col text-textWhite">
+                                <p>barber@gmail.com</p>
+                            </div>
+
+                        </div>
+                        <div class="flex flex-row gap-5 ">
+                            <h2 class=" text-sm font-semibold text-goldenYellow">
+                                Telefón
+                            </h2>
+
+                            <div class="flex flex-col text-textWhite">
+                                <p>+420 999 999 999</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+            <hr class="my-5 border-lineGrey sm:mx-auto lg:my-8" />
+            <div class="flex items-center mx-auto text-center">
+                <span class="text-xs text-gray-500 text-center mx-auto">
+                    © 2024
+                    <a href="https://eclipse.cloudylake.io/" class="hover:underline">
+                        CloudyLake.
+                    </a>
+                    All Rights Reserved.
+                </span>
+
+            </div>
+        </div>
+    </footer>
+
+
+
+</body>
+
+</html>
