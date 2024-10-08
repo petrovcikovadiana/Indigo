@@ -30,11 +30,14 @@ let currentIndex = 0;
 let intervalId;
 
 // chamge employee function
+// change employee function
 const changeEmployee = (index) => {
+  // If index is provided, update the current index to that value
+  // Otherwise, increment the current index (or wrap around)
   currentIndex =
     index !== undefined ? index : (currentIndex + 1) % employees.length;
-  const employee = employees[currentIndex];
 
+  const employee = employees[currentIndex];
   employeePhoto.src = employee.photo;
   employeeName.textContent = employee.name;
   employeeDescription.textContent = employee.description;
@@ -42,6 +45,10 @@ const changeEmployee = (index) => {
 
 // automatic change
 const startAutoChange = () => {
+  // Clear any existing interval to prevent multiple intervals running at the same time
+  stopAutoChange();
+
+  // Set a new interval
   intervalId = setInterval(() => changeEmployee(), 15000);
 };
 
@@ -54,8 +61,9 @@ const stopAutoChange = () => {
 employeeSelectors.forEach((selector) => {
   selector.addEventListener("click", (e) => {
     const index = parseInt(e.target.getAttribute("data-index"), 10);
+
     stopAutoChange(); // stop automatic change
-    changeEmployee(index); // switch employee
+    changeEmployee(index); // switch employee to the clicked one
     startAutoChange(); // restart automatic change
   });
 });
