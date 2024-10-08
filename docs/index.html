@@ -106,7 +106,7 @@
 
             <!-- Hamburger Menu Button -->
             <button id="menu-toggle" class="md:hidden focus:outline-none">
-                <svg id="menu-icon" class="w-6 h-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
+                <svg id="menu-icon" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
                     stroke="currentColor">
                     <path d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
@@ -181,7 +181,7 @@
     <main>
         <!-- hero start -->
         <section id="home"
-            class="min-h-[68vh] lg:min-h-[60vh] flex items-center md:pt-32 mb-10 overflow-y-hidden pt-16 ">
+            class="min-h-[60vh] lg:min-h-[60vh] flex items-center md:pt-32 mb-10 overflow-y-hidden pt-32 ">
             <div class="md:container mx-auto flex flex-row md:px-44 2xl:px-56 md:gap-32">
                 <!-- left container -->
                 <div class="flex flex-col gap-y-8 md:gap-x-12 md:pt-24">
@@ -197,12 +197,13 @@
                         <div class="text-[36px] lg:text-[60px] my-2 font-primary font-bold uppercase leading-[1]">
                             <span class="text-goldenYellow ">Barbershop</span>
                             <br />
-                            <span class="text-textWhite mr-4">Indigo</span>
+                            <span class="text-textWhite">Indigo</span>
                         </div>
                         <h2 class="mb-8 max-w-lg text-xl mx-auto lg:mx-0 text-textWhite">
                             Každý střih je krokem k většímu sebevědomí.
                         </h2>
-                        <div class="flex max-w-max gap-x-6 items-center mb-6 mx-auto lg:mx-0">
+                        <div
+                            class="flex md:flex-row gap-5 flex-col max-w-max gap-x-6 items-center mb-6 mx-auto lg:mx-0">
                             <!-- button -->
                             <a href="#contact">
                                 <button
@@ -210,12 +211,12 @@
                                     <span relative="relative z-10 ">Kontaktujte nás</span>
                                 </button>
                             </a>
-                            <a href="#contact">
+                            <!-- <a href="#gallery">
                                 <div class="flex flex-row items-center justify-center gap-3 text-textWhite">
                                     <img src="./img/Group 58.svg" />
                                     <p>Přejít na galerii</p>
                                 </div>
-                            </a>
+                            </a> -->
                         </div>
 
                     </div>
@@ -251,7 +252,7 @@
     </main>
 
     <!-- abouts us start -->
-    <section id="about" class="min-h-[70vh] lg:min-h-[60vh]  items-center md:mb-10 overflow-y-hidden">
+    <section id="about" class="min-h-[60vh] lg:min-h-[60vh]  items-center md:mb-10 overflow-y-hidden">
         <div class="flex flex-col items-center justify-center mx-auto mb-10">
             <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">O nás</h3>
             <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
@@ -324,7 +325,7 @@
                 <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Ceník</h3>
                 <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
             </div>
-            <div class="flex w-96 md:w-[600px] mx-auto rounded-xl my-16 border-2 border-goldenYellow">
+            <div class="flex w-96 md:w-[600px] mx-auto rounded-xl mt-10 mb-10 border-2 border-goldenYellow">
                 <div class="w-full bg-background rounded-2xl m-8 md:m-10">
                     <div class="flex flex-col items-center mx-auto">
                         <img src="./img/logo.svg" alt="face" class="object-fit h-24 md:h-32 md:w-32 " />
@@ -409,9 +410,9 @@
     <!-- pricing end -->
     <!-- our team start -->
     <section id="team">
-        <div class="flex flex-col gap-4 mx-auto md:w-full justify-center">
+        <div class="flex flex-col mx-auto md:w-full justify-center">
             <!-- Title -->
-            <div class="flex flex-col items-center justify-center mx-auto">
+            <div class="flex flex-col items-center mb-10 justify-center mx-auto">
                 <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Náš tým</h3>
                 <img src="./img/Group 53.svg" alt="Image 1" class="object-cover">
             </div>
@@ -457,7 +458,7 @@
     <section id="gallery">
         <div class="flex items-center justify-center min-h-[70vh] bg-lightBlack">
 
-            <div class="bg-lightBlack p-6 m-3 space-y-6 md:p-16">
+            <div class="bg-lightBlack p-6 space-y-6 md:p-16">
                 <!-- title -->
                 <div class="flex flex-col items-center justify-center mx-auto">
                     <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Galerie</h3>

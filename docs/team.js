@@ -51,7 +51,7 @@ const changeEmployee = (index) => {
 // automatic change
 const startAutoChange = () => {
   stopAutoChange(); // Clear any existing interval
-  intervalId = setInterval(() => changeEmployee(), 15000);
+  intervalId = setInterval(() => changeEmployee(), 10000);
 };
 
 // stop automatic change
