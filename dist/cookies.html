@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="cookies-eu-banner hidden">
+        <p class="pb-2"> Tato stránka využívá cookies. Kliknutím na tlačítko "Povolit vše" vyjadřujete souhlas s jejich
+            používáním.
+        </p>
+        <div class="flex flex-row gap-5 mx-auto items-center justify-center">
+            <button class="cookies-button accept">Povolit vše</button>
+            <button class="cookies-button decline">Odmítnout vše</button>
+        </div>
+        <button class="cookies-button edit">Upravit</button>
+
+    </div>
+    <!-- Sekce pro úpravu cookies -->
+    <div class="cookies-eu-edit hidden">
+        <p> Zvolte, které cookies chcete povolit: </p>
+        <div class="flex flex-col gap-3">
+            <label>
+                <input type="checkbox" id="technical-cookies" checked disabled>
+                Technické cookies (nutné pro fungování webu)
+            </label>
+            <label>
+                <input type="checkbox" id="analytical-cookies">
+                Analytické cookies
+            </label>
+            <label>
+                <input type="checkbox" id="marketing-cookies">
+                Marketingové cookies
+            </label>
+        </div>
+        <div class="flex flex-row gap-5 mx-auto items-center justify-center mt-4">
+            <button class="cookies-button save">Uložit nastavení</button>
+            <button class="cookies-button cancel">Zrušit</button>
+        </div>
+    </div>
+    <script src="cookies.js"></script>
+
+</body>
+
+</html>
