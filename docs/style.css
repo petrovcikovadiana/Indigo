@@ -766,6 +766,10 @@ video {
   width: 11rem;
 }
 
+.w-5 {
+  width: 1.25rem;
+}
+
 .w-6 {
   width: 1.5rem;
 }
@@ -1015,9 +1019,19 @@ video {
   padding-right: 2.5rem;
 }
 
+.px-2 {
+  padding-left: 0.5rem;
+  padding-right: 0.5rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
+}
+
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
 }
 
 .py-2 {
@@ -1034,16 +1048,12 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pl-5 {
-  padding-left: 1.25rem;
-}
-
 .pt-16 {
   padding-top: 4rem;
 }
 
-.pt-20 {
-  padding-top: 5rem;
+.pt-32 {
+  padding-top: 8rem;
 }
 
 .text-center {
@@ -1143,6 +1153,16 @@ video {
   opacity: 0.6;
 }
 
+.transition-colors {
+  transition-property: color, background-color, border-color, text-decoration-color, fill, stroke;
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+  transition-duration: 150ms;
+}
+
+.duration-300 {
+  transition-duration: 300ms;
+}
+
 .cookies-eu-banner {
   background-color: rgba(0, 0, 0, 0.6);
   color: #fff;
@@ -1209,6 +1229,13 @@ video {
 .cookies-eu-edit button:hover {
   background: #fff;
   color: #222;
+}
+
+.selected {
+  border: 2px solid #c7a676;
+  /* Zlatá barva */
+  border-radius: 50%;
+  /* Kruh kolem obrázku */
 }
 
 @media (min-width: 768px) {
@@ -1294,6 +1321,20 @@ video {
   transition-duration: 700ms;
 }
 
+.hover\:rounded-full:hover {
+  border-radius: 9999px;
+}
+
+.hover\:bg-lightBlack:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(44 44 46 / var(--tw-bg-opacity));
+}
+
+.hover\:text-background:hover {
+  --tw-text-opacity: 1;
+  color: rgb(33 33 35 / var(--tw-text-opacity));
+}
+
 .hover\:before\:-translate-x-40:hover::before {
   content: var(--tw-content);
   --tw-translate-x: -10rem;
@@ -1323,11 +1364,6 @@ video {
 
   .md\:m-5 {
     margin: 1.25rem;
-  }
-
-  .md\:mx-0 {
-    margin-left: 0px;
-    margin-right: 0px;
   }
 
   .md\:mb-0 {
@@ -1394,6 +1430,10 @@ video {
     width: 600px;
   }
 
+  .md\:w-auto {
+    width: auto;
+  }
+
   .md\:w-full {
     width: 100%;
   }
@@ -1439,6 +1479,11 @@ video {
     padding: 4rem;
   }
 
+  .md\:px-0 {
+    padding-left: 0px;
+    padding-right: 0px;
+  }
+
   .md\:px-44 {
     padding-left: 11rem;
     padding-right: 11rem;
@@ -1454,6 +1499,15 @@ video {
 
   .md\:pt-32 {
     padding-top: 8rem;
+  }
+
+  .md\:hover\:bg-transparent:hover {
+    background-color: transparent;
+  }
+
+  .md\:hover\:text-textWhite:hover {
+    --tw-text-opacity: 1;
+    color: rgb(240 240 240 / var(--tw-text-opacity));
   }
 }
 
@@ -1488,17 +1542,9 @@ video {
     grid-template-columns: repeat(4, minmax(0, 1fr));
   }
 
-  .lg\:gap-32 {
-    gap: 8rem;
-  }
-
   .lg\:py-8 {
     padding-top: 2rem;
     padding-bottom: 2rem;
-  }
-
-  .lg\:text-left {
-    text-align: left;
   }
 
   .lg\:text-\[60px\] {
@@ -1526,6 +1572,10 @@ video {
 
   .xl\:items-center {
     align-items: center;
+  }
+
+  .xl\:gap-32 {
+    gap: 8rem;
   }
 
   .xl\:px-0 {

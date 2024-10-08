@@ -69,3 +69,8 @@
   background: #fff;
   color: #222;
 }
+
+.selected {
+  border: 2px solid #c7a676; /* Zlatá barva */
+  border-radius: 50%; /* Kruh kolem obrázku */
+}

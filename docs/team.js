@@ -29,7 +29,6 @@ const employeeSelectors = document.querySelectorAll(".employee-selector");
 let currentIndex = 0;
 let intervalId;
 
-// chamge employee function
 // change employee function
 const changeEmployee = (index) => {
   // If index is provided, update the current index to that value
@@ -41,14 +40,17 @@ const changeEmployee = (index) => {
   employeePhoto.src = employee.photo;
   employeeName.textContent = employee.name;
   employeeDescription.textContent = employee.description;
+
+  // Odebrat třídu 'selected' ze všech obrázků
+  employeeSelectors.forEach((img) => img.classList.remove("selected"));
+
+  // Přidat třídu 'selected' k aktuálně vybranému obrázku
+  employeeSelectors[currentIndex].classList.add("selected");
 };
 
 // automatic change
 const startAutoChange = () => {
-  // Clear any existing interval to prevent multiple intervals running at the same time
-  stopAutoChange();
-
-  // Set a new interval
+  stopAutoChange(); // Clear any existing interval
   intervalId = setInterval(() => changeEmployee(), 15000);
 };
 
@@ -58,14 +60,20 @@ const stopAutoChange = () => {
 };
 
 // event listener for manual change
-employeeSelectors.forEach((selector) => {
+employeeSelectors.forEach((selector, index) => {
   selector.addEventListener("click", (e) => {
-    const index = parseInt(e.target.getAttribute("data-index"), 10);
+    const selectedIndex = parseInt(e.target.getAttribute("data-index"), 10);
 
     stopAutoChange(); // stop automatic change
-    changeEmployee(index); // switch employee to the clicked one
+    changeEmployee(selectedIndex); // switch employee
+
     startAutoChange(); // restart automatic change
   });
+});
+
+// Přidat 'selected' na první obrázek při načtení stránky
+document.addEventListener("DOMContentLoaded", () => {
+  employeeSelectors[0].classList.add("selected");
 });
 
 // automatic change start after page load

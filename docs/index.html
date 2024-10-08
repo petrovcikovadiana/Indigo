@@ -130,16 +130,53 @@
 
         <!-- Menu Items -->
         <div id="menu-items"
-            class="md:flex md:h-16 items-center w-full justify-start md:justify-center md:absolute z-10 pt-20 md:pt-14 hidden ">
-            <ul class="flex flex-col md:flex-row md:space-x-4 items-center pl-5">
-                <li><a href="#home" class="block py-2 px-4  text-textWhite">Domů</a></li>
-                <li><a href="#about" class="block py-2 px-4  text-textWhite">O nás</a></li>
-                <li><a href="#pricing" class="block py-2 px-4  text-textWhite">Ceník</a></li>
-                <li><a href="#team" class="block py-2 px-4  text-textWhite">Náš tým</a></li>
-                <li><a href="#gallery" class="block py-2 px-4  text-textWhite">Galerie</a></li>
-                <li><a href="#contact" class="block py-2 px-4  text-textWhite">Kontakt</a></li>
+            class="md:flex md:h-16 items-center w-full justify-start md:justify-center md:absolute z-10 pt-32 md:pt-14 hidden ">
+            <ul class="flex flex-col md:flex-row md:space-x-4 items-center  w-full md:w-auto md:px-0 px-2">
+                <li
+                    class="flex flex-row items-center w-full md:w-auto md:px-0 px-5 hover:bg-lightBlack hover:rounded-full hover:text-background transition-colors duration-300 md:hover:bg-transparent md:hover:text-textWhite">
+                    <img src="./img/home.svg" class="md:hidden w-5" />
+                    <a href="#home" class="block py-2 px-4 w-full md:w-auto text-textWhite">
+                        Domů
+                    </a>
+                </li>
+                <li
+                    class="flex flex-row items-center w-full md:w-auto md:px-0 px-5 hover:bg-lightBlack hover:rounded-full hover:text-background transition-colors duration-300 md:hover:bg-transparent md:hover:text-textWhite">
+                    <img src="./img/scissors.svg" class="md:hidden w-5" />
+                    <a href="#about" class="block py-2 px-4 w-full md:w-auto text-textWhite">
+                        O nás
+                    </a>
+                </li>
+                <li
+                    class="flex flex-row items-center w-full md:w-auto md:px-0 px-5 hover:bg-lightBlack hover:rounded-full hover:text-background transition-colors duration-300 md:hover:bg-transparent md:hover:text-textWhite">
+                    <img src="./img/price.svg" class="md:hidden w-5" />
+                    <a href="#pricing" class="block py-2 px-4 w-full md:w-auto text-textWhite">
+                        Ceník
+                    </a>
+                </li>
+                <li
+                    class="flex flex-row items-center w-full md:w-auto md:px-0 px-5 hover:bg-lightBlack hover:rounded-full hover:text-background transition-colors duration-300 md:hover:bg-transparent md:hover:text-textWhite">
+                    <img src="./img/team.svg" class="md:hidden w-5" />
+                    <a href="#team" class="block py-2 px-4 w-full md:w-auto text-textWhite">
+                        Náš tým
+                    </a>
+                </li>
+                <li
+                    class="flex flex-row items-center w-full md:w-auto md:px-0 px-5 hover:bg-lightBlack hover:rounded-full hover:text-background transition-colors duration-300 md:hover:bg-transparent md:hover:text-textWhite">
+                    <img src="./img/image.svg" class="md:hidden w-5" />
+                    <a href="#gallery" class="block py-2 px-4 w-full md:w-auto text-textWhite">
+                        Galerie
+                    </a>
+                </li>
+                <li
+                    class="flex flex-row items-center w-full md:w-auto md:px-0 px-5 hover:bg-lightBlack hover:rounded-full hover:text-background transition-colors duration-300 md:hover:bg-transparent md:hover:text-textWhite">
+                    <img src="./img/tel.svg" class="md:hidden w-5" />
+                    <a href="#contact" class="block py-2 px-4 w-full md:w-auto text-textWhite">
+                        Kontakt
+                    </a>
+                </li>
             </ul>
         </div>
+
     </nav>
     <main>
         <!-- hero start -->
@@ -149,10 +186,10 @@
                 <!-- left container -->
                 <div class="flex flex-col gap-y-8 md:gap-x-12 md:pt-24">
                     <!-- introduction text -->
-                    <div class="text-center items-center font-primary lg:text-left">
+                    <div class="text-center items-center font-primary xl:text-left">
                         <div class="flex flex-row gap-2 text-center items-center">
                             <hr class="hidden xl:block h-px w-32 bg-textGrey border-0">
-                            <p class="text-sm text-textGrey items-center leading-[0.8] uppercase mx-auto md:mx-0">
+                            <p class="text-sm text-textGrey items-center leading-[0.8] uppercase mx-auto xl:mx-0">
                                 Od roku 2019
                             </p>
                         </div>
@@ -220,7 +257,7 @@
             <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
         </div>
 
-        <div class="md:container mx-auto flex flex-row md:px-44 lg:gap-32">
+        <div class="md:container mx-auto flex flex-row md:px-44 xl:gap-32">
             <!-- right container -->
             <div class="hidden xl:flex flex-1 max-w-[320px] lg:max-w-[482px]">
                 <div class="hidden lg:flex gap-4">
@@ -402,8 +439,8 @@
 
                     <div class="flex flex-row gap-6 mt-10 items-center justify-center mx-auto">
                         <!-- Přidání data-index k obrázkům pro manuální přepínání -->
-                        <img src="./img/man.jpeg" alt="Image 1" class=" w-16 h-16 rounded-full employee-selector"
-                            data-index="0">
+                        <img src="./img/man.jpeg" alt="Image 1"
+                            class="object-cover w-16 h-16 rounded-full employee-selector" data-index="0">
                         <img src="./img/allef.jpg" alt="Image 1"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="1">
                         <img src="./img/woman.jpeg" alt="Image 1"
@@ -546,8 +583,8 @@
     </footer>
     <!-- footer end -->
     <!-- cookies -->
-    <div id="cookie-container"></div>
-    <script src="cookies.js"></script>
+    <!-- <div id="cookie-container"></div>
+    <script src="cookies.js"></script> -->
     <script src="team.js"> </script>
 </body>
 
