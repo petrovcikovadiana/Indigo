@@ -85,27 +85,22 @@
             #menu-items {
                 display: flex;
                 position: fixed;
-                /* Zruší pevnou pozici */
                 height: 0;
-                /* Normální výška */
                 background-color: transparent;
-                /* Žádné pozadí */
                 flex-direction: row;
-                /* Položky v řadě */
                 justify-content: center;
-                /* Vycentrování na desktopu */
             }
         }
     </style>
 </head>
 
 <body class="bg-background">
-    <nav class="flex flex-col fixed w-full z-20">
+    <nav class="flex flex-col fixed w-full z-20 bg-background">
         <!-- Navbar -->
-        <div class="flex flex-row justify-between items-center h-16 px-10 text-textWhite">
+        <div class="flex container mx-auto flex-row justify-between items-center h-26 px-10 text-textWhite">
             <!-- Logo -->
             <div class="flex items-center space-x-4 relative z-20">
-                <img src="./img/logo.svg" alt="logo" class="w-20 h-20 mt-10" />
+                <img src="./img/logo.svg" alt="logo" class="w-20 h-20 mt-4" />
 
             </div>
 
@@ -135,7 +130,7 @@
 
         <!-- Menu Items -->
         <div id="menu-items"
-            class="md:flex md:h-16 items-center w-full justify-start md:justify-center md:absolute z-10 pt-20 md:pt-8 hidden ">
+            class="md:flex md:h-16 items-center w-full justify-start md:justify-center md:absolute z-10 pt-20 md:pt-14 hidden ">
             <ul class="flex flex-col md:flex-row md:space-x-4 items-center pl-5">
                 <li><a href="#home" class="block py-2 px-4  text-textWhite">Domů</a></li>
                 <li><a href="#about" class="block py-2 px-4  text-textWhite">O nás</a></li>
@@ -148,14 +143,14 @@
     </nav>
     <main>
         <!-- hero start -->
-        <section id="home" class="min-h-[85vh] lg:min-h-[60vh] flex items-center md:pt-32 mb-10 overflow-y-hidden ">
+        <section id="home" class="min-h-[68vh] lg:min-h-[60vh] flex items-center md:pt-32 mb-10 overflow-y-hidden ">
             <div class="md:container mx-auto flex flex-row md:px-44 md:gap-32">
                 <!-- left container -->
                 <div class="flex flex-col gap-y-8 md:gap-x-12 md:pt-24">
                     <!-- introduction text -->
                     <div class="text-center items-center font-primary lg:text-left">
                         <div class="flex flex-row gap-2 text-center items-center">
-                            <hr class="hidden md:block h-px w-32 bg-textGrey border-0">
+                            <hr class="hidden xl:block h-px w-32 bg-textGrey border-0">
                             <p class="text-sm text-textGrey items-center leading-[0.8] uppercase mx-auto md:mx-0">
                                 Od roku 2019
                             </p>
@@ -188,7 +183,7 @@
                     </div>
                 </div>
                 <!-- middle container -->
-                <div class="hidden lg:flex  max-w-[320px] lg:max-w-[533px]">
+                <div class="hidden xl:flex  max-w-[320px] lg:max-w-[533px]">
                     <div class="hidden md:flex">
                         <div class="">
                             <img src="./img/4FCBFF9B-0D7A-4FD4-A76D-0D634E48CD19.webp" alt="hero"
@@ -197,7 +192,7 @@
                     </div>
                 </div>
                 <!-- right container -->
-                <div class="hidden lg:flex  flex-col gap-10 w-64">
+                <div class="hidden xl:flex  flex-col gap-10 w-64">
                     <div class="flex flex-col gap-2 items-center justify-center text-textWhite">
                         <img src="./img/Group 57.svg" alt="hero" class="w-24 h-24 object-cover">
                         <h2>Stříhání</h2>
@@ -218,16 +213,16 @@
     </main>
 
     <!-- abouts us start -->
-    <section id="about" class="min-h-[85vh] lg:min-h-[60vh]  items-center mb-10 overflow-y-hidden">
+    <section id="about" class="min-h-[70vh] lg:min-h-[60vh]  items-center md:mb-10 overflow-y-hidden">
         <div class="flex flex-col items-center justify-center mx-auto mb-10">
             <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">O nás</h3>
             <img src="./img/Group 53.svg" alt="Image 1" class=" object-cover">
         </div>
 
-        <div class="md:container mx-auto flex flex-row md:px-44 md:gap-32">
+        <div class="md:container mx-auto flex flex-row md:px-44 lg:gap-32">
             <!-- right container -->
-            <div class="hidden lg:flex flex-1 max-w-[320px] lg:max-w-[482px]">
-                <div class="hidden md:flex gap-4">
+            <div class="hidden xl:flex flex-1 max-w-[320px] lg:max-w-[482px]">
+                <div class="hidden lg:flex gap-4">
                     <div class=" ">
                         <img src="./img/left.jpeg" alt="placeholder" class="flex mt-1 h-80 w-64 object-cover">
                     </div>
@@ -238,9 +233,9 @@
                 </div>
             </div>
             <!-- left container -->
-            <div class="flex flex-col gap-y-8 md:items-center md:gap-x-12">
+            <div class="flex flex-col gap-y-8 xl:items-center md:gap-x-12">
                 <!-- introduction text -->
-                <div class="flex-1 text-center font-primary lg:text-left">
+                <div class="flex-1 text-center font-primary xl:text-left">
                     <p class="text-sm text-textGrey mb-2 leading-[0.8]">
                         <span>BARBERSHOP OD ROKU 2019</span>
                     </p>
@@ -250,12 +245,12 @@
                         <br />
                         <span class="text-textWhite"> stylu</span>
                     </div>
-                    <h3 class="mb-8 max-w-lg text-textWhite mx-auto px-10 md:px-0 lg:mx-0">
+                    <h3 class="mb-8 max-w-lg text-textWhite mx-auto px-10 xl:px-0 xl:mx-0">
                         Jsme hrdí na svou práci a naším cílem je poskytovat špičkové služby každému, kdo vstoupí do
                         našich dveří. U nás zažijete nejen dokonalý střih a úpravu vousů, ale i relaxační atmosféru, kde
                         si můžete odpočinout a užít si chvíli pro sebe.
                     </h3>
-                    <div class="flex max-w-max gap-x-6 items-center justify-center mb-6 mx-auto lg:mx-0">
+                    <div class="flex max-w-max gap-x-6 items-center justify-center mb-6 mx-auto xl:mx-0">
                         <div class="flex flex-col items-center">
                             <h2 class="font-serif text-4xl font-medium text-goldenYellow">
                                 5+ </h2>
