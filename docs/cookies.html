@@ -9,38 +9,66 @@
 
 <body>
     <div class="cookies-eu-banner hidden">
-        <p class="pb-2"> Tato stránka využívá cookies. Kliknutím na tlačítko "Povolit vše" vyjadřujete souhlas s jejich
-            používáním.
+        <h1 class="text-background text-lg font-bold pb-2">Používání souboru cookies</h1>
+        <p class="text-sm text-background pb-3"> Tato stránka využívá cookies. Kliknutím na tlačítko "Povolit vše"
+            vyjadřujete souhlas s jejich používáním.
         </p>
-        <div class="flex flex-row gap-5 mx-auto items-center justify-center">
-            <button class="cookies-button accept">Povolit vše</button>
-            <button class="cookies-button decline">Odmítnout vše</button>
+        <div class="flex flex-row gap-5 mx-auto  items-center justify-center">
+            <button class="cookies-button-accept accept">Povolit vše</button>
+            <button class="cookies-button-decline decline">Odmítnout vše</button>
+
         </div>
-        <button class="cookies-button edit">Upravit</button>
+        <button class="cookies-button-edit edit">Upravit</button>
 
     </div>
-    <!-- Sekce pro úpravu cookies -->
-    <div class="cookies-eu-edit hidden">
-        <p> Zvolte, které cookies chcete povolit: </p>
-        <div class="flex flex-col gap-3">
-            <label>
-                <input type="checkbox" id="technical-cookies" checked disabled>
-                Technické cookies (nutné pro fungování webu)
+    <!-- edit cookies -->
+    <div class="cookies-eu-edit hidden ">
+        <p class="font-bold text-lg pb-5">Použití cookies
+
+        </p>
+        <p class="mb-5">Tato stránka používá soubory cookies a podobné technologie, abychom vám mohli nabídnout lepší
+            uživatelský
+            zážitek, personalizovaný obsah a zobrazování reklam. Některé soubory cookies jsou nezbytné pro správné
+            fungování stránek, zatímco jiné nám pomáhají zlepšovat vaše uživatelské prostředí prostřednictvím analýzy
+            údajů. Na základě vašeho souhlasu můžeme spolupracovat s partnery, kteří shromažďují a zpracovávají údaje,
+            jako je IP adresa, informace o prohlížeči a zařízení, pro následující účely:</p>
+        <div class="flex flex-col gap-2 font-bolder">
+            <label class="flex items-center gap-2">
+                <div class="bg-beige p-4 rounded-lg w-full justify-between flex"> <span class="mr-3">Technické
+                        cookies</span>
+                    <div class="switch">
+                        <input type="checkbox" id="technical-cookies" checked disabled>
+                        <span class="slider round"></span>
+                    </div>
+                </div>
+
             </label>
-            <label>
-                <input type="checkbox" id="analytical-cookies">
-                Analytické cookies
+            <label class="flex items-center gap-2">
+                <div class="bg-beige p-4 rounded-lg w-full justify-between flex">
+                    <span class="mr-3">Analytické cookies</span>
+                    <div class="switch">
+                        <input type="checkbox" id="analytical-cookies">
+                        <span class="slider round"></span>
+                    </div>
+                </div>
             </label>
-            <label>
-                <input type="checkbox" id="marketing-cookies">
-                Marketingové cookies
+            <label class="flex items-center gap-2">
+                <div class="bg-beige p-4 rounded-lg w-full justify-between flex"><span class="mr-3">Marketingové
+                        cookies</span>
+                    <div class="switch">
+                        <input type="checkbox" id="marketing-cookies">
+                        <span class="slider round"></span>
+                    </div>
+                </div>
             </label>
         </div>
         <div class="flex flex-row gap-5 mx-auto items-center justify-center mt-4">
-            <button class="cookies-button save">Uložit nastavení</button>
-            <button class="cookies-button cancel">Zrušit</button>
+            <button class="cookies-button-save save">Uložit nastavení</button>
+            <button class="cookies-button-cancel cancel">Zrušit</button>
         </div>
     </div>
+    <div id="cookie-container"></div>
+
     <script src="cookies.js"></script>
 
 </body>

@@ -629,12 +629,20 @@ video {
   margin-bottom: 6rem;
 }
 
+.mb-5 {
+  margin-bottom: 1.25rem;
+}
+
 .mb-6 {
   margin-bottom: 1.5rem;
 }
 
 .mb-8 {
   margin-bottom: 2rem;
+}
+
+.mr-3 {
+  margin-right: 0.75rem;
 }
 
 .mt-1 {
@@ -793,6 +801,10 @@ video {
   max-width: 320px;
 }
 
+.max-w-\[450px\] {
+  max-width: 450px;
+}
+
 .max-w-lg {
   max-width: 32rem;
 }
@@ -808,42 +820,6 @@ video {
 
 .max-w-xs {
   max-width: 20rem;
-}
-
-.max-w-44 {
-  max-width: 11rem;
-}
-
-.max-w-56 {
-  max-width: 14rem;
-}
-
-.max-w-64 {
-  max-width: 16rem;
-}
-
-.max-w-72 {
-  max-width: 18rem;
-}
-
-.max-w-80 {
-  max-width: 20rem;
-}
-
-.max-w-96 {
-  max-width: 24rem;
-}
-
-.max-w-\[250px\] {
-  max-width: 250px;
-}
-
-.max-w-\[350px\] {
-  max-width: 350px;
-}
-
-.max-w-\[450px\] {
-  max-width: 450px;
 }
 
 .flex-1 {
@@ -882,6 +858,10 @@ video {
   flex-direction: column;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
@@ -904,10 +884,6 @@ video {
 
 .gap-2 {
   gap: 0.5rem;
-}
-
-.gap-3 {
-  gap: 0.75rem;
 }
 
 .gap-4 {
@@ -974,6 +950,10 @@ video {
   border-radius: 9999px;
 }
 
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-xl {
   border-radius: 0.75rem;
 }
@@ -1008,6 +988,11 @@ video {
   border-color: #ffffff1a;
 }
 
+.bg-\[\#f3e7d6\] {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 231 214 / var(--tw-bg-opacity));
+}
+
 .bg-background {
   --tw-bg-opacity: 1;
   background-color: rgb(33 33 35 / var(--tw-bg-opacity));
@@ -1030,6 +1015,16 @@ video {
 .bg-textGrey {
   --tw-bg-opacity: 1;
   background-color: rgb(121 121 121 / var(--tw-bg-opacity));
+}
+
+.bg-beige {
+  --tw-bg-opacity: 1;
+  background-color: rgb(243 231 214 / var(--tw-bg-opacity));
+}
+
+.bg-copyright {
+  --tw-bg-opacity: 1;
+  background-color: rgb(161 161 161 / var(--tw-bg-opacity));
 }
 
 .object-cover {
@@ -1074,8 +1069,12 @@ video {
   padding-bottom: 0.5rem;
 }
 
-.pt-28 {
-  padding-top: 7rem;
+.pb-3 {
+  padding-bottom: 0.75rem;
+}
+
+.pb-5 {
+  padding-bottom: 1.25rem;
 }
 
 .pt-32 {
@@ -1084,6 +1083,10 @@ video {
 
 .text-center {
   text-align: center;
+}
+
+.text-start {
+  text-align: start;
 }
 
 .font-serif {
@@ -1100,6 +1103,10 @@ video {
 
 .text-\[36px\] {
   font-size: 36px;
+}
+
+.text-lg {
+  font-size: 1.125rem;
 }
 
 .text-sm {
@@ -1190,33 +1197,58 @@ video {
 }
 
 .cookies-eu-banner {
-  background-color: rgba(0, 0, 0, 0.6);
-  color: #fff;
-  font-size: 13px;
+  background-color: rgba(255, 255, 255);
+  color: #ddd;
+  padding: 25px;
   text-align: center;
   position: fixed;
-  bottom: 0;
-  width: 100%;
-  padding: 15px 0;
+  bottom: 5%;
+  left: 50%;
+  transform: translateX(-50%);
   z-index: 30;
+  width: 30%;
+  max-width: 600px;
 }
 
-.cookies-eu-banner button {
+.cookies-eu-banner .cookies-button-accept {
   text-decoration: none;
-  background: #222;
+  background: #c7a676;
   color: #fff;
   cursor: pointer;
-  padding: 4px 7px;
+  padding: 8px 29px;
   margin: 2px 0;
   font-size: 13px;
   font-weight: 700;
-  border-radius: 5px;
   transition: background 0.07s, color 0.07s, border-color 0.07s;
 }
 
-.cookies-eu-banner button:hover {
-  background: #ddd;
+.cookies-eu-banner .cookies-button-decline {
+  text-decoration: none;
+  color: #212123;
+  border: 1px solid #000;
+  cursor: pointer;
+  padding: 7px 15px;
+  margin: 2px 0;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.07s, color 0.07s, border-color 0.07s;
+}
+
+.cookies-eu-banner .cookies-button-accept:hover,
+.cookies-eu-banner .cookies-button-decline:hover {
+  background: #f3e7d6;
   color: #222;
+}
+
+.cookies-eu-banner .cookies-button-edit {
+  text-decoration: none;
+  color: #212123;
+  cursor: pointer;
+  padding: 7px 15px;
+  margin: 2px 0;
+  font-size: 13px;
+  font-weight: 700;
+  transition: background 0.07s, color 0.07s, border-color 0.07s;
 }
 
 .hidden {
@@ -1224,14 +1256,17 @@ video {
 }
 
 .cookies-eu-edit {
-  background-color: rgba(0, 0, 0, 0.5);
-  color: #fff;
-  padding: 6px;
+  background-color: #fff;
+  color: #212123;
+  padding: 50px;
   font-size: 13px;
   text-align: center;
   position: fixed;
-  bottom: 0;
-  width: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 10%;
+  width: 40%;
+  max-width: 600px;
   z-index: 30;
 }
 
@@ -1239,29 +1274,121 @@ video {
   margin-right: 10px;
 }
 
-.cookies-eu-edit button {
-  background: #222;
+.cookies-eu-edit .cookies-button-save {
+  background: #c7a676;
   color: #fff;
-  border: 1px solid #000;
   cursor: pointer;
-  padding: 4px 7px;
+  padding: 7px 15px;
   margin: 2px 0;
   font-size: 13px;
   font-weight: 700;
-  border-radius: 5px;
   transition: background 0.07s, color 0.07s, border-color 0.07s;
 }
 
-.cookies-eu-edit button:hover {
-  background: #fff;
+.cookies-eu-edit .cookies-button-save:hover {
+  background: #f3e7d6;
   color: #222;
 }
 
-.selected {
-  border: 2px solid #c7a676;
-  /* Zlatá barva */
+/* Responzivní styly pro menší obrazovky */
+
+@media (max-width: 768px) {
+  .cookies-eu-banner,
+  .cookies-eu-edit {
+    width: 90%;
+    padding: 15px;
+    font-size: 12px;
+  }
+
+  .cookies-eu-banner .cookies-button-accept,
+  .cookies-eu-banner .cookies-button-decline,
+  .cookies-eu-banner .cookies-button-edit,
+  .cookies-eu-edit .cookies-button-save {
+    padding: 7px 10px;
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .cookies-eu-banner,
+  .cookies-eu-edit {
+    width: 95%;
+    padding: 10px;
+    font-size: 11px;
+  }
+
+  .cookies-eu-banner .cookies-button-accept,
+  .cookies-eu-banner .cookies-button-decline,
+  .cookies-eu-banner .cookies-button-edit,
+  .cookies-eu-edit .cookies-button-save {
+    padding: 5px 8px;
+    font-size: 11px;
+  }
+}
+
+/* Styl pro switch */
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 40px;
+  height: 20px;
+}
+
+.switch input {
+  opacity: 0;
+  width: 0;
+  height: 0;
+}
+
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
   border-radius: 50%;
-  /* Kruh kolem obrázku */
+}
+
+input:checked + .slider {
+  background-color: #c7a676;
+}
+
+input:checked + .slider:before {
+  transform: translateX(20px);
+}
+
+/* Zaoblení slideru */
+
+.slider.round {
+  border-radius: 36px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}
+
+/* Přidáno pro správné zarovnání textu a switcherů */
+
+label {
+  display: flex;
+  align-items: center;
+  width: 100%;
 }
 
 @media (min-width: 768px) {

@@ -36,6 +36,7 @@ module.exports = {
         textWhite: "#F0F0F0",
         copyright: "#A1A1A1",
         lineGrey: "#ffffff1a",
+        beige: "#f3e7d6",
       },
     },
   },
