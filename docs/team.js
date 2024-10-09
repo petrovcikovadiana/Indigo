@@ -4,19 +4,19 @@ const employees = [
     name: "Petr Petr",
     description:
       "Jan se holičství věnuje více než 10 let a specializuje se na klasické pánské účesy a precizní úpravu vousů. Jeho pozornost k detailu a cit pro styl dělají z každého střihu jedinečný zážitek.",
-    photo: "./img/man.jpeg",
+    photo: "./img/man_11zon.webp",
   },
   {
     name: "Petr Svoboda",
     description:
       "Petr je odborníkem na moderní pánské účesy a styling. Je znám svou kreativitou a vždy dokáže svým klientům nabídnout nejnovější trendy.",
-    photo: "./img/allef.jpg",
+    photo: "./img/allef_11zon.webp",
   },
   {
     name: "Lucie Dvořáková",
     description:
       "Lucie se specializuje na střihy vousů a pánskou péči o vlasy. Její přístup je vždy přátelský a profesionální.",
-    photo: "./img/woman.jpeg",
+    photo: "./img/woman.webp",
   },
 ];
 
