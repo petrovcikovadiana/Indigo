@@ -7,8 +7,7 @@
     <title>Barbershop Indigo</title>
     <meta name="description"
         content="Stylový barbershop v srdci města nabízí prvotřídní pánské střihy, úpravu vousů a luxusní péči v moderním prostředí. Rezervujte si svůj termín online a zažijte profesionální služby našich barberů">
-    <meta name="keywords"
-        content="barbershop, úprava vlasů, pánské účesy, holení, péče o vousy, barbershop indigo, indigo">
+    <meta name="keywords" content="barbershop, holení, péče o vousy, barbershop indigo, indigo">
     <link rel="stylesheet" href="style.css">
     <script src="https://unpkg.com/feather-icons"></script>
     <script defer>
@@ -67,7 +66,6 @@
             z-index: 40;
         }
 
-        /* Basic style menu */
         #menu-items {
             display: none;
             position: fixed;
@@ -78,11 +76,9 @@
             background-color: #212123;
         }
 
-        /* Style to display menu */
         #menu-items.show {
             display: flex;
             flex-direction: column;
-
         }
 
         @media (min-width: 768px) {
@@ -104,10 +100,8 @@
         <div class="flex container mx-auto flex-row justify-between items-center h-28 px-10 text-textWhite">
             <!-- Logo -->
             <div class="flex items-center space-x-4 relative z-20">
-                <img src="./img/logo.svg" alt="logo" loading="lazy" class="w-20 h-20 mt-4" />
-
+                <img src="./img/logo.svg" alt="logo indigo" loading="lazy" class="w-20 h-20 mt-4" />
             </div>
-
             <!-- Hamburger Menu Button -->
             <button id="menu-toggle" aria-label="Open the menu" class="xl:hidden focus:outline-none">
                 <svg id="menu-icon" class="w-10 h-10" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24"
@@ -115,10 +109,9 @@
                     <path d="M4 6h16M4 12h16M4 18h16" />
                 </svg>
             </button>
-
             <!-- Contact - hidden on mobile -->
             <div class="hidden xl:flex relative z-20">
-                <!-- socials -->
+                <!-- Socials -->
                 <div class="flex text-[20px] gap-x-3 max-w-max mx-auto lg:mx-0">
                     <a href="https://www.facebook.com/barbershopindigo/"
                         class="w-8 h-8 flex items-center justify-center">
@@ -131,7 +124,6 @@
                 </div>
             </div>
         </div>
-
         <!-- Menu Items -->
         <div id="menu-items"
             class="flex md:h-16 items-center w-full justify-start md:justify-center md:absolute z-10 pt-32 md:pt-14  ">
@@ -183,12 +175,12 @@
 
     </nav>
     <main>
-        <!-- hero start -->
+        <!-- Hero start -->
         <section id="home" class="min-h-[40vh] lg:min-h-[60vh] flex items-center md:pt-32 overflow-y-hidden pt-32 ">
             <div class="md:container mx-auto flex flex-row md:px-44 2xl:px-56 md:gap-32">
-                <!-- left container -->
+                <!-- Left container -->
                 <div class="flex flex-col gap-y-8 md:gap-x-12 md:pt-24">
-                    <!-- introduction text -->
+                    <!-- Introduction text -->
                     <div class="text-center items-center font-primary xl:text-left">
                         <div class="flex flex-row gap-2 text-center items-center">
                             <hr class="hidden xl:block h-px w-32 bg-copyright border-0">
@@ -196,10 +188,8 @@
                                 Od roku 2019
                             </p>
                         </div>
-
                         <div class="text-[36px] lg:text-[60px] my-2 font-primary font-bold uppercase leading-[1]">
                             <h1 class="text-goldenYellow ">Barbershop</h1>
-
                             <span class="text-textWhite">Indigo</span>
                         </div>
                         <h2 class="mb-8 max-w-lg text-xl mx-auto lg:mx-0 text-textWhite">
@@ -207,19 +197,17 @@
                         </h2>
                         <div
                             class="flex md:flex-row gap-5 flex-col max-w-max gap-x-6 items-center mb-6 mx-auto lg:mx-0">
-                            <!-- button -->
+                            <!-- Button -->
                             <a href="#contact">
                                 <button
                                     class="w-36 h-10  overflow-hidden bg-goldenYellow text-background before:ease relative before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40">
                                     <span relative="relative z-10 ">Kontaktujte nás</span>
                                 </button>
                             </a>
-
                         </div>
-
                     </div>
                 </div>
-                <!-- middle container -->
+                <!-- Middle container -->
                 <div class="hidden xl:flex  max-w-[320px] lg:max-w-[533px]">
                     <div class="hidden md:flex">
                         <div>
@@ -228,7 +216,7 @@
                         </div>
                     </div>
                 </div>
-                <!-- right container -->
+                <!-- Right container -->
                 <div class="hidden xl:flex  flex-col gap-10 w-64">
                     <div class="flex flex-col gap-2 items-center justify-center text-textWhite">
                         <img src="./img/Group 57.svg" alt="strihani-icon" loading="lazy" class="w-24 h-24 object-cover">
@@ -246,18 +234,17 @@
             </div>
             </div>
         </section>
-        <!-- hero end -->
+        <!-- Hero end -->
     </main>
 
-    <!-- abouts us start -->
+    <!-- Abouts us start -->
     <section id="about" class="min-h-[50vh] lg:min-h-[60vh]  items-center md:mb-10 overflow-y-hidden">
         <div class="flex flex-col items-center justify-center mx-auto mb-10">
             <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">O nás</h3>
             <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
         </div>
-
         <div class="md:container mx-auto flex flex-row md:px-44 xl:gap-32">
-            <!-- right container -->
+            <!-- Right container -->
             <div class="hidden xl:flex flex-1 max-w-[320px] lg:max-w-[482px]">
                 <div class="hidden lg:flex gap-4">
                     <div>
@@ -270,9 +257,9 @@
                     </div>
                 </div>
             </div>
-            <!-- left container -->
+            <!-- Left container -->
             <div class="flex flex-col gap-y-8 xl:items-center md:gap-x-12">
-                <!-- introduction text -->
+                <!-- Introduction text -->
                 <div class="flex-1 text-center font-primary xl:text-left">
                     <p class="text-sm text-copyright mb-2 leading-[0.8]">
                         <span>BARBERSHOP OD ROKU 2019</span>
@@ -294,7 +281,7 @@
                             <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
                                 Let zkušeností </p>
                         </div>
-                        <!-- vertical line -->
+                        <!-- Vertical line -->
                         <div class="inline-block h-16 min-h-[1em] w-0.5 self-stretch bg-goldenYellow ">
                         </div>
                         <div class="flex flex-col items-center">
@@ -308,11 +295,11 @@
             </div>
         </div>
     </section>
-    <!-- about us end -->
-    <!-- pricing start -->
+    <!-- About us end -->
+    <!-- Pricing start -->
     <section id="pricing">
         <div className=" flex md:flex-row flex-col gap-4 mx-auto md:w-full justify-center">
-            <!-- title -->
+            <!-- Title -->
             <div class="flex flex-col items-center justify-center mx-auto">
                 <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Ceník</h3>
                 <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
@@ -320,13 +307,13 @@
             <div class="flex w-96 md:w-[600px] mx-auto rounded-xl mt-10 mb-10 border-2 border-goldenYellow">
                 <div class="w-full bg-background rounded-2xl m-8 md:m-10">
                     <div class="flex flex-col items-center mx-auto">
-                        <img src="./img/logo.svg" alt="logo" loading="lazy" class="object-fit h-24 md:h-32 md:w-32 " />
+                        <img src="./img/logo.svg" alt="logo barber" loading="lazy"
+                            class="object-fit h-24 md:h-32 md:w-32 " />
                     </div>
                     <div class="flex flex-row justify-between mb-2">
                         <div class="flex flex-col ">
                             <h2 class="font-serif text-xl font-medium text-goldenYellow">
                                 Stříhání </h2>
-
                             <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
                                 Lorem ipsum dolor sit amet
                             </p>
@@ -387,8 +374,8 @@
             </div>
         </div>
     </section>
-    <!-- pricing end -->
-    <!-- our team start -->
+    <!-- Pricing end -->
+    <!-- Our team start -->
     <section id="team">
         <div class="flex flex-col mx-auto md:w-full justify-center">
             <!-- Title -->
@@ -396,14 +383,13 @@
                 <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Náš tým</h3>
                 <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class="object-cover">
             </div>
-
             <!-- Card -->
             <div
                 class="flex  md:h-[250px] md:w-[595px] mx-auto rounded-tl-full md:rounded-bl-full rounded-tr-full bg-lightBlack mb-24 ">
                 <div class="w-full m-8 md:m-5">
                     <div class="flex md:flex-row flex-col mb-2 gap-6">
                         <div class="flex flex-col w-full items-center md:w-1/3">
-                            <img id="employee-photo" src="./img/antonio_11zon.webp" alt="man" loading="lazy"
+                            <img id="employee-photo" src="./img/antonio_11zon.webp" alt="hair" loading="lazy"
                                 class="rounded-full object-cover h-44 w-44 md:h-52 md:w-52" />
                         </div>
                         <div class="flex flex-col w-full md:w-2/3 items-center md:items-start text-goldenYellow max-w-xs"
@@ -418,9 +404,8 @@
                             <img src="./img/Vector.svg" alt="signature" loading="lazy" class="w-44" />
                         </div>
                     </div>
-
                     <div class="flex flex-row gap-6 mt-10 items-center justify-center mx-auto">
-                        <!-- Přidání data-index k obrázkům pro manuální přepínání -->
+                        <!-- Add data to manual switch -->
                         <img src="./img/man_11zon.webp" alt="man" loading="lazy"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="0">
                         <img src="./img/allef_11zon.webp" alt="employee" loading="lazy"
@@ -432,70 +417,55 @@
             </div>
         </div>
     </section>
-    <!-- our team end -->
-
-    <!-- gallery start -->
+    <!-- Our team end -->
+    <!-- Gallery start -->
     <section id="gallery">
         <div class="flex items-center justify-center min-h-[70vh] bg-lightBlack">
-
             <div class="bg-lightBlack p-6 space-y-6 md:p-16">
-                <!-- title -->
+                <!-- Title -->
                 <div class="flex flex-col items-center justify-center mx-auto">
                     <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Galerie</h3>
                     <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
                 </div>
                 <div class="flex flex-col justify-between space-y-5 md:flex-row md:space-y-0"></div>
-
                 <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3">
                     <div class="relative group">
                         <img src="img/right_11zon.webp" alt="sofa" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
-
                     </div>
-
                     <div class="relative group">
                         <img src="img/andrea-donato-MNu0n-3BIKs-unsplash_11zon.webp" alt="tools" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
-
                     </div>
-
                     <div class="relative group">
                         <img src="img/al_11zon.webp" alt="styling" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
-
                     </div>
-
                     <div class="relative group">
                         <img src="img/delfina-pan-8esvJeVUdes-unsplash_11zon.webp" loading="lazy" alt="drying"
                             class="w-72 h-56 object-cover rounded-xl" />
-
                     </div>
-
                     <div class="relative group">
                         <img src="img/antonio_11zon.webp" alt="beard" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
-
                     </div>
-
                     <div class="relative group">
                         <img src="img/left_11zon.webp" alt="interier" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
-
                     </div>
                 </div>
             </div>
         </div>
     </section>
-    <!-- gallery end -->
-    <!-- footer start -->
+    <!-- Gallery end -->
+    <!-- Footer start -->
     <footer id="contact" class="bg-background">
-        <div class="mx-auto w-full max-w-screen-xl p-4 py-6 lg:py-8">
+        <div class="mx-auto w-full max-w-screen-xl pt-5 lg:pt-8">
             <div class="md:flex items-center justify-center">
-
                 <div class="flex md:flex-row flex-col gap-10 items-center mx-auto">
                     <div class="mb-6 md:mb-0">
                         <a href="#home" class="flex items-center">
-                            <img src="./img/logo.svg" alt="logo" loading="lazy" class="w-20 h-20">
+                            <img src="./img/logo.svg" alt="logo barbershop" loading="lazy" class="w-20 h-20">
                             </img>
                         </a>
                     </div>
@@ -505,7 +475,7 @@
                         </img>
                         <div class="flex flex-col text-textWhite text-sm">
                             <p>Po - Pá : 9:00 - 20:00</p>
-                            <p>So : 9:00 - 16:00</p>
+                            <p>So : 10:00 - 16:00</p>
                             <p>Ne : Zavřeno</p>
                         </div>
                     </div>
@@ -523,7 +493,6 @@
                     <div class="hidden md:block h-10 min-h-[5em] w-0.5 self-stretch bg-lineGrey">
                     </div>
                     <div class="flex flex-col">
-
                         <div class="flex flex-row gap-5 ">
                             <img src="./img/phone-svgrepo-com.svg" alt="phone" loading="lazy"
                                 class="text-sm font-semibold text-goldenYellow">
@@ -540,22 +509,22 @@
                             class=" text-sm font-semibold text-goldenYellow">
                         </img>
                         <div class="flex flex-col text-textWhite text-sm">
-                            <p>barber@gmail.com</p>
+                            <p>digovamarketa@seznam.cz</p>
                         </div>
                     </div>
                 </div>
             </div>
             <hr class="my-5 border-lineGrey sm:mx-auto lg:my-8" />
             <div class="flex flex-col gap-5 justify-center mx-auto items-center px-2 pb-2">
-                <a href="#" class="edit-cookies text-xs text-copyright">Upravit nastavení cookies</a>
+                <button class="edit-cookies text-xs text-copyright">Upravit nastavení cookies</button>
                 <span class="text-xs text-copyright">
-                    © 2024 CloudyLake. All Rights Reserved.
+                    © 2024 Barbershop Indigo. All Rights Reserved.
                 </span>
             </div>
         </div>
     </footer>
-    <!-- footer end -->
-    <!-- cookies -->
+    <!-- Footer end -->
+    <!-- Cookies -->
     <div id="cookie-container"></div>
     <script src="cookies.js"></script>
     <script src="team.js"> </script>

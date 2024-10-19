@@ -96,7 +96,6 @@
   color: #222;
 }
 
-/* Responzivní styly pro menší obrazovky */
 @media (max-width: 768px) {
   .cookies-eu-banner,
   .cookies-eu-edit {
@@ -131,7 +130,6 @@
   }
 }
 
-/* Styl pro switch */
 .switch {
   position: relative;
   display: inline-block;
@@ -177,7 +175,6 @@ input:checked + .slider:before {
   transform: translateX(20px);
 }
 
-/* Zaoblení slideru */
 .slider.round {
   border-radius: 36px;
 }
@@ -186,9 +183,45 @@ input:checked + .slider:before {
   border-radius: 50%;
 }
 
-/* Přidáno pro správné zarovnání textu a switcherů */
+.slider-tech {
+  position: absolute;
+  cursor: not-allowed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #ccc;
+  transition: 0.4s;
+  border-radius: 34px;
+}
+
+.slider-tech:before {
+  position: absolute;
+  content: "";
+  height: 14px;
+  width: 14px;
+  left: 3px;
+  bottom: 3px;
+  background-color: white;
+  transition: 0.4s;
+  border-radius: 50%;
+}
+
+input:checked + .slider-tech {
+  background-color: #e0e0e0;
+}
+
+input:checked + .slider-tech:before {
+  transform: translateX(20px);
+}
+
 label {
   display: flex;
   align-items: center;
   width: 100%;
+}
+
+.selected {
+  border: 3px solid #c7a676;
+  border-radius: 50%;
 }

@@ -1,4 +1,4 @@
-// data
+// Data
 const employees = [
   {
     name: "Petr Petr",
@@ -20,7 +20,7 @@ const employees = [
   },
 ];
 
-// choice of HTML elements
+// Choice of HTML elements
 const employeePhoto = document.getElementById("employee-photo");
 const employeeName = document.getElementById("employee-name");
 const employeeDescription = document.getElementById("employee-description");
@@ -29,7 +29,7 @@ const employeeSelectors = document.querySelectorAll(".employee-selector");
 let currentIndex = 0;
 let intervalId;
 
-// change employee function
+// Change employee function
 const changeEmployee = (index) => {
   // If index is provided, update the current index to that value
   // Otherwise, increment the current index (or wrap around)
@@ -41,40 +41,40 @@ const changeEmployee = (index) => {
   employeeName.textContent = employee.name;
   employeeDescription.textContent = employee.description;
 
-  // Odebrat třídu 'selected' ze všech obrázků
+  // Remove 'selected' class from all images
   employeeSelectors.forEach((img) => img.classList.remove("selected"));
 
-  // Přidat třídu 'selected' k aktuálně vybranému obrázku
+  // Add 'selected' class to the current image
   employeeSelectors[currentIndex].classList.add("selected");
 };
 
-// automatic change
+// Automatic change
 const startAutoChange = () => {
   stopAutoChange(); // Clear any existing interval
   intervalId = setInterval(() => changeEmployee(), 10000);
 };
 
-// stop automatic change
+// Stop automatic change
 const stopAutoChange = () => {
   clearInterval(intervalId);
 };
 
-// event listener for manual change
+// Event listener for manual change
 employeeSelectors.forEach((selector, index) => {
   selector.addEventListener("click", (e) => {
     const selectedIndex = parseInt(e.target.getAttribute("data-index"), 10);
 
-    stopAutoChange(); // stop automatic change
-    changeEmployee(selectedIndex); // switch employee
+    stopAutoChange();
+    changeEmployee(selectedIndex);
 
-    startAutoChange(); // restart automatic change
+    startAutoChange();
   });
 });
 
-// Přidat 'selected' na první obrázek při načtení stránky
+// Add 'selected' class to the first image on page load
 document.addEventListener("DOMContentLoaded", () => {
   employeeSelectors[0].classList.add("selected");
 });
 
-// automatic change start after page load
+// Automatic change start after page load
 startAutoChange();

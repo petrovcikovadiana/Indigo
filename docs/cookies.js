@@ -1,11 +1,11 @@
-// Funkce pro načtení hodnoty cookie
+// Function to get a cookie by name
 const getCookie = (name) => {
   const value = "; " + document.cookie;
   const parts = value.split("; " + name + "=");
   return parts.length < 2 ? undefined : parts.pop().split(";").shift();
 };
 
-// Funkce pro nastavení cookies
+// Function to set a cookie
 const setCookie = function (name, value, expiryDays, path = "/") {
   const exdate = new Date();
   exdate.setHours(
@@ -23,12 +23,22 @@ document.addEventListener("DOMContentLoaded", () => {
 
       const $cookiesBanner = document.querySelector(".cookies-eu-banner");
       const $editSection = document.querySelector(".cookies-eu-edit");
-      const $acceptButton = $cookiesBanner.querySelector(".accept");
-      const $declineButton = $cookiesBanner.querySelector(".decline");
-      const $editButton = $cookiesBanner.querySelector(".edit");
-      const $saveButton = $editSection.querySelector(".save");
-      const $cancelButton = $editSection.querySelector(".cancel");
-      const $editLink = document.querySelector(".edit-cookies"); // Nový odkaz ve footeru
+      const $acceptButton = document.querySelector(
+        ".cookies-eu-banner .accept"
+      );
+      const $declineButton = document.querySelector(
+        ".cookies-eu-banner .decline"
+      );
+      const $editButton = document.querySelector(".cookies-eu-banner .edit");
+      const $editLink = document.querySelector(".edit-cookies");
+      const $saveButton = document.querySelector(".cookies-eu-edit .save");
+      const $editAcceptButton = document.querySelector(
+        ".cookies-eu-edit .accept"
+      );
+      const $editDeclineButton = document.querySelector(
+        ".cookies-eu-edit .decline"
+      );
+
       const technicalCookiesCheckbox =
         document.getElementById("technical-cookies");
       const analyticalCookiesCheckbox =
@@ -38,53 +48,63 @@ document.addEventListener("DOMContentLoaded", () => {
       const cookieName = "cookiesBanner";
       const hasCookie = getCookie(cookieName);
 
-      // Funkce pro načtení hodnoty cookies a nastavení checkboxů podle stavu cookies
       const loadCookiesSettings = () => {
-        technicalCookiesCheckbox.checked = true; // Technické cookies jsou vždy povoleny a zaškrtnuté
+        technicalCookiesCheckbox.checked = true;
         analyticalCookiesCheckbox.checked =
           getCookie("analyticalCookies") === "true";
         marketingCookiesCheckbox.checked =
           getCookie("marketingCookies") === "true";
       };
 
-      // Zobrazíme cookies lištu, pokud cookie není nastavena
       if (!hasCookie) {
         $cookiesBanner.classList.remove("hidden");
       }
 
-      // Kliknutí na tlačítko "Povolit vše"
       $acceptButton.addEventListener("click", () => {
         setCookie("technicalCookies", "true", 365);
         setCookie("analyticalCookies", "true", 365);
         setCookie("marketingCookies", "true", 365);
         setCookie(cookieName, "true", 365);
-        $cookiesBanner.remove();
+        $cookiesBanner.classList.add("hidden");
       });
 
-      // Kliknutí na tlačítko "Odmítnout vše"
       $declineButton.addEventListener("click", () => {
         setCookie("technicalCookies", "true", 365);
         setCookie("analyticalCookies", "false", 365);
         setCookie("marketingCookies", "false", 365);
         setCookie(cookieName, "false", 365);
-        $cookiesBanner.remove();
+        $cookiesBanner.classList.add("hidden");
       });
 
-      // Kliknutí na tlačítko "Upravit"
+      $editLink.addEventListener("click", (e) => {
+        e.preventDefault();
+        $cookiesBanner.classList.add("hidden");
+        $editSection.classList.remove("hidden");
+        loadCookiesSettings();
+      });
+
       $editButton.addEventListener("click", () => {
         $cookiesBanner.classList.add("hidden");
         $editSection.classList.remove("hidden");
-        loadCookiesSettings(); // Při otevření načteme stav cookies a podle toho nastavíme checkboxy
+        loadCookiesSettings();
       });
 
-      // Kliknutí na odkaz ve footeru "Upravit nastavení cookies"
-      $editLink.addEventListener("click", (e) => {
-        e.preventDefault(); // Zamezíme výchozímu chování odkazu
-        $editSection.classList.remove("hidden"); // Zobrazíme edit sekci
-        loadCookiesSettings(); // Načteme stav cookies a podle toho nastavíme checkboxy
+      $editAcceptButton.addEventListener("click", () => {
+        setCookie("technicalCookies", "true", 365);
+        setCookie("analyticalCookies", "true", 365);
+        setCookie("marketingCookies", "true", 365);
+        setCookie(cookieName, "true", 365);
+        $editSection.classList.add("hidden");
       });
 
-      // Kliknutí na tlačítko "Uložit nastavení"
+      $editDeclineButton.addEventListener("click", () => {
+        setCookie("technicalCookies", "true", 365);
+        setCookie("analyticalCookies", "false", 365);
+        setCookie("marketingCookies", "false", 365);
+        setCookie(cookieName, "false", 365);
+        $editSection.classList.add("hidden");
+      });
+
       $saveButton.addEventListener("click", () => {
         const analyticalCookies = analyticalCookiesCheckbox.checked;
         const marketingCookies = marketingCookiesCheckbox.checked;
@@ -99,12 +119,6 @@ document.addEventListener("DOMContentLoaded", () => {
         setCookie(cookieName, "true", 365);
 
         $editSection.classList.add("hidden");
-      });
-
-      // Kliknutí na tlačítko "Zrušit"
-      $cancelButton.addEventListener("click", () => {
-        $editSection.classList.add("hidden");
-        $cookiesBanner.classList.remove("hidden");
       });
     })
     .catch((error) => console.error("Error loading the cookie banner:", error));
