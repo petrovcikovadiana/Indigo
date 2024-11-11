@@ -26,6 +26,8 @@ module.exports = {
     extend: {
       fontFamily: {
         sans: ["Raleway", "sans-serif"],
+        windsong: ["Windsong"],
+        mont: ["Montserrat"],
       },
 
       colors: {

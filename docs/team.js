@@ -1,22 +1,25 @@
 // Data
 const employees = [
   {
-    name: "Petr Petr",
+    name: "Markéta",
     description:
-      "Jan se holičství věnuje více než 10 let a specializuje se na klasické pánské účesy a precizní úpravu vousů. Jeho pozornost k detailu a cit pro styl dělají z každého střihu jedinečný zážitek.",
-    photo: "./img/man_11zon.webp",
-  },
-  {
-    name: "Petr Svoboda",
-    description:
-      "Petr je odborníkem na moderní pánské účesy a styling. Je znám svou kreativitou a vždy dokáže svým klientům nabídnout nejnovější trendy.",
-    photo: "./img/allef_11zon.webp",
-  },
-  {
-    name: "Lucie Dvořáková",
-    description:
-      "Lucie se specializuje na střihy vousů a pánskou péči o vlasy. Její přístup je vždy přátelský a profesionální.",
+      "Markéta se holičství věnuje více než 10 let a specializuje se na klasické pánské účesy a precizní úpravu vousů. Její pozornost k detailu a cit pro styl dělají z každého střihu jedinečný zážitek.",
     photo: "./img/woman.webp",
+    signature: "Markéta",
+  },
+  {
+    name: "Radek",
+    description:
+      "Radek je zkušený barber s vášní pro klasické pánské střihy a precizní úpravu vousů. Díky své pozornosti k detailu a citlivému přístupu vytváří účesy a vousy, které zaručují stylový a upravený vzhled.",
+    photo: "./img/man_11zon.webp",
+    signature: "Radek",
+  },
+  {
+    name: "Marka",
+    description:
+      "Marka se specializuje na moderní střihy a barvení, přičemž vždy přináší styl a kreativitu, které podtrhnou jedinečný vzhled každého klienta.",
+    photo: "./img/Marka.webp",
+    signature: "Marka",
   },
 ];
 
@@ -25,9 +28,17 @@ const employeePhoto = document.getElementById("employee-photo");
 const employeeName = document.getElementById("employee-name");
 const employeeDescription = document.getElementById("employee-description");
 const employeeSelectors = document.querySelectorAll(".employee-selector");
+const employeeSignature = document.getElementById("employee-signature");
 
 let currentIndex = 0;
 let intervalId;
+
+// Add 'selected' class to the first image on page load and show the first employee
+document.addEventListener("DOMContentLoaded", () => {
+  employeeSelectors[0].classList.add("selected");
+  changeEmployee(0); // Display the first employee immediately
+  startAutoChange(); // Start automatic change after initial display
+});
 
 // Change employee function
 const changeEmployee = (index) => {
@@ -40,6 +51,7 @@ const changeEmployee = (index) => {
   employeePhoto.src = employee.photo;
   employeeName.textContent = employee.name;
   employeeDescription.textContent = employee.description;
+  employeeSignature.textContent = employee.signature;
 
   // Remove 'selected' class from all images
   employeeSelectors.forEach((img) => img.classList.remove("selected"));
@@ -51,7 +63,7 @@ const changeEmployee = (index) => {
 // Automatic change
 const startAutoChange = () => {
   stopAutoChange(); // Clear any existing interval
-  intervalId = setInterval(() => changeEmployee(), 10000);
+  intervalId = setInterval(() => changeEmployee(), 5000);
 };
 
 // Stop automatic change

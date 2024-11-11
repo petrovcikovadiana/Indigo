@@ -9,6 +9,15 @@
         content="Stylový barbershop v srdci města nabízí prvotřídní pánské střihy, úpravu vousů a luxusní péči v moderním prostředí. Rezervujte si svůj termín online a zažijte profesionální služby našich barberů">
     <meta name="keywords" content="barbershop, holení, péče o vousy, barbershop indigo, indigo">
     <link rel="stylesheet" href="style.css">
+    <!-- signature font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=WindSong:wght@400;500&display=swap" rel="stylesheet">
+    <!-- general font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
+        rel="stylesheet">
     <script src="https://unpkg.com/feather-icons"></script>
     <script defer>
         document.addEventListener("DOMContentLoaded", function () {
@@ -94,7 +103,7 @@
     </style>
 </head>
 
-<body class="bg-background">
+<body class="bg-background font-mont">
     <nav class="flex flex-col fixed w-full z-20 bg-background">
         <!-- Navbar -->
         <div class="flex container mx-auto flex-row justify-between items-center h-28 px-10 text-textWhite">
@@ -177,18 +186,18 @@
     <main>
         <!-- Hero start -->
         <section id="home" class="min-h-[40vh] lg:min-h-[60vh] flex items-center md:pt-32 overflow-y-hidden pt-32 ">
-            <div class="md:container mx-auto flex flex-row md:px-44 2xl:px-56 md:gap-32">
+            <div class="md:container mx-auto flex flex-row items-center justify-center md:px-44 2xl:px-56 md:gap-32">
                 <!-- Left container -->
                 <div class="flex flex-col gap-y-8 md:gap-x-12 md:pt-24">
                     <!-- Introduction text -->
-                    <div class="text-center items-center font-primary xl:text-left">
+                    <div class="text-center items-center font-mont xl:text-left">
                         <div class="flex flex-row gap-2 text-center items-center">
                             <hr class="hidden xl:block h-px w-32 bg-copyright border-0">
                             <p class="text-sm text-copyright items-center leading-[0.8] uppercase mx-auto xl:mx-0">
                                 Od roku 2019
                             </p>
                         </div>
-                        <div class="text-[36px] lg:text-[60px] my-2 font-primary font-bold uppercase leading-[1]">
+                        <div class="text-[36px] lg:text-[60px] my-2 font-mont font-bold uppercase leading-[1]">
                             <h1 class="text-goldenYellow ">Barbershop</h1>
                             <span class="text-textWhite">Indigo</span>
                         </div>
@@ -196,11 +205,11 @@
                             Každý střih je krokem k většímu sebevědomí.
                         </h2>
                         <div
-                            class="flex md:flex-row gap-5 flex-col max-w-max gap-x-6 items-center mb-6 mx-auto lg:mx-0">
+                            class="flex md:flex-row gap-5 flex-col max-w-max gap-x-6 items-center justify-center text-center mb-6 mx-auto xl:mx-0">
                             <!-- Button -->
                             <a href="#contact">
                                 <button
-                                    class="w-36 h-10  overflow-hidden bg-goldenYellow text-background before:ease relative before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40">
+                                    class="w-40 h-10 font-semibold overflow-hidden bg-goldenYellow text-background before:ease relative before:absolute before:right-0 before:top-0 before:h-12 before:w-6 before:translate-x-12 before:rotate-6 before:bg-white before:opacity-10 before:duration-700 hover:before:-translate-x-40">
                                     <span relative="relative z-10 ">Kontaktujte nás</span>
                                 </button>
                             </a>
@@ -217,7 +226,7 @@
                     </div>
                 </div>
                 <!-- Right container -->
-                <div class="hidden xl:flex  flex-col gap-10 w-64">
+                <div class="hidden xl:flex font-mont  flex-col gap-10 w-64">
                     <div class="flex flex-col gap-2 items-center justify-center text-textWhite">
                         <img src="./img/Group 57.svg" alt="strihani-icon" loading="lazy" class="w-24 h-24 object-cover">
                         <h2>Stříhání</h2>
@@ -239,11 +248,12 @@
 
     <!-- Abouts us start -->
     <section id="about" class="min-h-[50vh] lg:min-h-[60vh]  items-center md:mb-10 overflow-y-hidden">
+        <!-- title -->
         <div class="flex flex-col items-center justify-center mx-auto mb-10">
             <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">O nás</h3>
             <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
         </div>
-        <div class="md:container mx-auto flex flex-row md:px-44 xl:gap-32">
+        <div class="md:container mx-auto items-center justify-center flex flex-row md:px-44 xl:gap-32">
             <!-- Right container -->
             <div class="hidden xl:flex flex-1 max-w-[320px] lg:max-w-[482px]">
                 <div class="hidden lg:flex gap-4">
@@ -260,34 +270,35 @@
             <!-- Left container -->
             <div class="flex flex-col gap-y-8 xl:items-center md:gap-x-12">
                 <!-- Introduction text -->
-                <div class="flex-1 text-center font-primary xl:text-left">
+                <div class="flex-1 text-center font-mont xl:text-left">
                     <p class="text-sm text-copyright mb-2 leading-[0.8]">
                         <span>BARBERSHOP OD ROKU 2019</span>
                     </p>
-                    <div class="text-4xl font-primary font-bold uppercase mx-auto leading-[1] mb-6 ">
+                    <div class="text-4xl font-mont font-bold uppercase mx-auto leading-[1] mb-6 ">
                         <h3 class="text-textWhite">Tradice v
-                            moderním <br> <span>stylu</span> </h3>
+                            <span class="text-goldenYellow"> moderním <br> stylu</span>
+                        </h3>
                     </div>
-                    <h3 class="mb-8 max-w-lg text-textWhite mx-auto px-10 xl:px-0 xl:mx-0">
+                    <h3 class="mb-8 max-w-md font-mont text-textWhite mx-auto px-10 xl:px-0 xl:mx-0">
                         Jsme hrdí na svou práci a naším cílem je poskytovat špičkové služby každému, kdo vstoupí do
                         našich dveří. U nás zažijete nejen dokonalý střih a úpravu vousů, ale i relaxační atmosféru, kde
                         si můžete odpočinout a užít si chvíli pro sebe.
                     </h3>
                     <div class="flex max-w-max gap-x-6 items-center justify-center mb-6 mx-auto xl:mx-0">
                         <div class="flex flex-col items-center">
-                            <h4 class="font-serif text-4xl font-medium text-goldenYellow">
+                            <h4 class="text-4xl font-medium text-goldenYellow">
                                 5+ </h4>
 
-                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
                                 Let zkušeností </p>
                         </div>
                         <!-- Vertical line -->
                         <div class="inline-block h-16 min-h-[1em] w-0.5 self-stretch bg-goldenYellow ">
                         </div>
                         <div class="flex flex-col items-center">
-                            <h4 class="font-serif text-4xl font-medium text-goldenYellow">
+                            <h4 class="text-4xl font-medium text-goldenYellow">
                                 1000k </h4>
-                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
                                 Spokojených zákazníků </p>
                         </div>
                     </div>
@@ -304,69 +315,213 @@
                 <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Ceník</h3>
                 <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
             </div>
-            <div class="flex w-96 md:w-[600px] mx-auto rounded-xl mt-10 mb-10 border-2 border-goldenYellow">
+            <!-- logo -->
+            <div class="flex w-96 md:w-[746px] mx-auto rounded-xl mt-10 mb-10 border-2 border-goldenYellow">
                 <div class="w-full bg-background rounded-2xl m-8 md:m-10">
                     <div class="flex flex-col items-center mx-auto">
                         <img src="./img/logo.svg" alt="logo barber" loading="lazy"
                             class="object-fit h-24 md:h-32 md:w-32 " />
                     </div>
-                    <div class="flex flex-row justify-between mb-2">
-                        <div class="flex flex-col ">
-                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
-                                Stříhání </h2>
-                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
-                                Lorem ipsum dolor sit amet
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <h2 class="text-xl text-center md:text-start font-medium text-goldenYellow">
+                                Exclusive experience (haircut & shaving & whisky & cigara) </h2>
+                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
+                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                                <p> 70 - 90 min</p>
+                            </div>
+                            <p
+                                class="max-w-md text-center md:text-start text-sm leading-5 tracking-wide text-textWhite ">
+                                Pánský střih s mytím, masáž hlavy, holení hot towel, peelingová masáž obličeje, úprava
+                                kontur, ošetření tváře po holení, sklenka whisky & doutník
                             </p>
                         </div>
-                        <div class="flex flex-col justify-center">
-                            <p class="text-md text-goldenYellow justify-center">
-                                450 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[520px] bg-textGrey border-0 mb-2">
-                    <div class="flex flex-row justify-between mb-2">
-                        <div class="flex flex-col ">
-                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
-                                Stříhání </h2>
-                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
-                                Lorem ipsum dolor sit amet
-                            </p>
-                        </div>
-                        <div class="flex flex-col justify-center">
-                            <p class="text-md text-goldenYellow justify-center">
-                                450 Kč
+                        <div class="flex flex-col justify-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-center">
+                                1390 Kč
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[520px] bg-textGrey border-0 mb-2">
-                    <div class="flex flex-row justify-between mb-2">
-                        <div class="flex flex-col ">
-                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
-                                Stříhání </h2>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
 
-                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
-                                Lorem ipsum dolor sit amet
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <h2 class="text-xl text-center md:text-start font-medium text-goldenYellow">
+                                Classic grooming (haircut & towel shaving) </h2>
+                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
+                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                                <p>40 - 60 min</p>
+                            </div>
+                            <p
+                                class="max-w-md text-center md:text-start text-sm leading-5 tracking-wide  text-textWhite ">
+                                Pánský střih s mytím, masáž hlavy, holení hot towel, ošetření tváře po holení, úprava
+                                chloupků a kontur
                             </p>
                         </div>
-                        <div class="flex flex-col justify-center">
-                            <p class="text-md text-goldenYellow justify-center">
-                                450 Kč
+                        <div class="flex flex-col justify-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-center">
+                                1000 Kč
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[520px] bg-textGrey border-0 mb-2">
-                    <div class="flex flex-row justify-between mb-2">
-                        <div class="flex flex-col ">
-                            <h2 class="font-serif text-xl font-medium text-goldenYellow">
-                                Stříhání </h2>
-                            <p class="max-w-xs text-xs leading-5 tracking-wide  text-textWhite ">
-                                Lorem ipsum dolor sit amet
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <h2 class="text-xl font-medium text-goldenYellow">
+                                Men's haircut </h2>
+                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
+                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                                <p>40 - 60 min</p>
+                            </div>
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                Pánský střih s mytím, ošetření vlasů
                             </p>
                         </div>
-                        <div class="flex flex-col justify-center">
-                            <p class="text-md text-goldenYellow justify-center">
-                                450 Kč
+                        <div class="flex flex-col justify-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-center">
+                                650 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <h2 class="text-xl font-medium text-goldenYellow">
+                                Stříhání + hair tattoo </h2>
+                            <p
+                                class="max-w-md text-sm text-center md:text-start leading-5 tracking-wide  text-textWhite ">
+                                Fresh cut dle výběru, hair tattoo, úprava břitvou, styling
+                            </p>
+                        </div>
+                        <div class="flex flex-col justify-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-center">
+                                700 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <h2 class="text-xl font-medium text-goldenYellow">
+                                Klasický střih </h2>
+                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
+                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                                <p>30 min</p>
+                            </div>
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                Pánský střih strojkem
+                            </p>
+                        </div>
+                        <div class="flex flex-col justify-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-center">
+                                500 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mt-6 mb-3 md:mb-0">
+                        Střih junior barber </h2>
+                    <div class="flex flex-row gap-3 justify-center md:justify-start text-goldenYellow my-2"> <img
+                            src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                        <p>30 min</p>
+                    </div>
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                Dětský střih - děti ve věku 5 - 12 let
+                            </p>
+                        </div>
+                        <div class="flex flex-col text-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-end">
+                                400 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-row flex-col justify-between mb-6 mt-4 md:mt-0">
+                        <div class="flex flex-col items-center md:items-start">
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                Dětský střih - děti ve věku 1 - 15 let
+                            </p>
+                        </div>
+                        <div class="flex flex-col text-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-end ">
+                                500 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <h2 class=" text-xl font-medium text-goldenYellow text-center md:text-start">
+                                Hot towel wet shave (holení vousů metodou hot towel) </h2>
+                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
+                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                                <p>30 min</p>
+                            </div>
+                            <p
+                                class="max-w-xs text-sm text-center md:text-start leading-5 tracking-wide  text-textWhite ">
+                                Holení vousů speciální metodou "hot towel" - napářka horkým ručníkem, ošetření tváře po
+                                holení
+                            </p>
+                        </div>
+                        <div class="flex flex-col justify-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-center">
+                                650 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <h2 class="text-xl font-medium text-goldenYellow">
+                                Barvení vousů </h2>
+                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
+                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                                <p>30 min</p>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-center">
+                                250 Kč - 350 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mt-6 mb-3 md:mb-0">
+                        Barvení vlasů, melíry pro gentlemany </h2>
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
+                        <div class="flex flex-col gap-2 items-center md:items-start">
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                Zesvětlení vlasů
+                            </p>
+                        </div>
+                        <div class="flex flex-col text-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-end">
+                                500 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <div class="flex md:flex-row flex-col justify-between mb-6 mt-4 md:mt-0">
+                        <div class="flex flex-col items-center md:items-start">
+                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                Přeliv
+                            </p>
+                        </div>
+                        <div class="flex flex-col text-center pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-end ">
+                                600 Kč
+                            </p>
+                        </div>
+                    </div>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center md:my-6">
+                        <div class="flex flex-col gap-2">
+                            <h2 class="text-xl font-medium text-goldenYellow">
+                                Ošetření horkou párou + maska </h2>
+                        </div>
+                        <div class="flex flex-col justify-end pt-3 md:pt-0">
+                            <p class="text-xl text-goldenYellow justify-end">
+                                350 Kč
                             </p>
                         </div>
                     </div>
@@ -385,33 +540,33 @@
             </div>
             <!-- Card -->
             <div
-                class="flex  md:h-[250px] md:w-[595px] mx-auto rounded-tl-full md:rounded-bl-full rounded-tr-full bg-lightBlack mb-24 ">
+                class="flex md:h-[250px] md:w-[595px] mx-auto rounded-tl-full md:rounded-bl-full rounded-tr-full bg-lightBlack mb-24 ">
                 <div class="w-full m-8 md:m-5">
-                    <div class="flex md:flex-row flex-col mb-2 gap-6">
+                    <div class="flex md:flex-row flex-col  mb-2 gap-6">
                         <div class="flex flex-col w-full items-center md:w-1/3">
-                            <img id="employee-photo" src="./img/antonio_11zon.webp" alt="hair" loading="lazy"
+                            <img id="employee-photo" src="" alt="employee-photo" loading="lazy"
                                 class="rounded-full object-cover h-44 w-44 md:h-52 md:w-52" />
                         </div>
                         <div class="flex flex-col w-full md:w-2/3 items-center md:items-start text-goldenYellow max-w-xs"
                             style="height: 200px;">
-                            <h3 id="employee-name" class="pb-2 mx-auto lg:mx-0 ">Jan Novotný</h3>
+                            <h3 id="employee-name" class="pb-2 font-mont mx-auto font-normal text-lg lg:mx-0 "></h3>
                             <p id="employee-description"
-                                class="text-md text-textWhite justify-center pb-2 md:text-start text-center">
-                                Jan se holičství věnuje více než 10 let a specializuje se na klasické pánské účesy a
-                                precizní úpravu vousů.
-                                Jeho pozornost k detailu a cit pro styl dělají z každého střihu jedinečný zážitek.
+                                class="text-md text-textWhite font-mont font-light justify-center pb-2 md:text-start text-center">
+
                             </p>
-                            <img src="./img/Vector.svg" alt="signature" loading="lazy" class="w-44" />
+                            <p id="employee-signature" class="font-windsong text-5xl"></p>
                         </div>
                     </div>
                     <div class="flex flex-row gap-6 mt-10 items-center justify-center mx-auto">
                         <!-- Add data to manual switch -->
-                        <img src="./img/man_11zon.webp" alt="man" loading="lazy"
+                        <img src="./img/woman.webp" alt="marketa" loading="lazy"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="0">
-                        <img src="./img/allef_11zon.webp" alt="employee" loading="lazy"
+                        <img src="./img/man_11zon.webp" alt="radek" loading="lazy"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="1">
-                        <img src="./img/woman.webp" alt="woman" loading="lazy"
+                        <img src="./img/Marka.webp" alt="marka" loading="lazy"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="2">
+
+
                     </div>
                 </div>
             </div>
