@@ -15,11 +15,11 @@ const employees = [
     signature: "Markéta",
   },
   {
-    name: "Marka",
+    name: "Marky",
     description:
-      "Marka se specializuje na moderní střihy a barvení, přičemž vždy přináší styl a kreativitu, které podtrhnou jedinečný vzhled každého klienta.",
+      "Marky se specializuje na moderní střihy a barvení, přičemž vždy přináší styl a kreativitu, které podtrhnou jedinečný vzhled každého klienta.",
     photo: "./img/Marka.webp",
-    signature: "Marka",
+    signature: "Marky",
   },
 ];
 
