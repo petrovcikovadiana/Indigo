@@ -48,6 +48,21 @@
 
             feather.replace();
         });
+
+
+        function openLightbox(imageSrc) {
+            const lightbox = document.getElementById("lightbox");
+            const lightboxImage = document.getElementById("lightboxImage");
+            lightboxImage.src = imageSrc;
+            lightbox.classList.remove("hidden");
+            document.body.classList.add("overflow-hidden");
+        }
+
+        function closeLightbox() {
+            const lightbox = document.getElementById("lightbox");
+            lightbox.classList.add("hidden");
+            document.body.classList.remove("overflow-hidden");
+        }
     </script>
     <style>
         .columns-1 {
@@ -106,10 +121,10 @@
 <body class="bg-background font-mont">
     <nav class="flex flex-col fixed w-full z-20 bg-background">
         <!-- Navbar -->
-        <div class="flex container mx-auto flex-row justify-between items-center h-28 px-10 text-textWhite">
+        <div class="flex container mx-auto flex-row justify-between items-center md:h-28 h-20 px-10 text-textWhite">
             <!-- Logo -->
             <div class="flex items-center space-x-4 relative z-20">
-                <img src="./img/logo.svg" alt="logo indigo" loading="lazy" class="w-20 h-20 mt-4" />
+                <img src="./img/logo.svg" alt="logo indigo" loading="lazy" class="w-16 h-16 md:w-20 md:h-20 md:mt-4" />
             </div>
             <!-- Hamburger Menu Button -->
             <button id="menu-toggle" aria-label="Open the menu" class="xl:hidden focus:outline-none">
@@ -186,7 +201,7 @@
     <main>
         <!-- Hero start -->
         <section id="home"
-            class="min-h-[40vh] lg:min-h-[60vh] md:mb-5 flex items-center md:pt-32 overflow-y-hidden pt-32 ">
+            class="max-h-[50vh] lg:max-h-[75vh] md:mb-5 flex items-center md:pt-32 overflow-y-hidden pt-32 ">
             <div class="md:container mx-auto flex flex-row items-center justify-center md:px-44 2xl:px-56 md:gap-32">
                 <!-- Left container -->
                 <div class="flex flex-col gap-y-8 md:gap-x-12 md:pt-24">
@@ -221,15 +236,14 @@
                 <div class="hidden xl:flex  max-w-[320px] lg:max-w-[533px]">
                     <div class="hidden md:flex">
                         <div>
-                            <img src="./img/4FCBFF9B-0D7A-4FD4-A76D-0D634E48CD19.webp" alt="hero" loading="lazy"
-                                class="flex mt-1 opacity-60">
+                            <img src="./img/test.webp" alt="hero" loading="lazy" class="flex mt-1 opacity-70">
                         </div>
                     </div>
                 </div>
                 <!-- Right container -->
-                <div class="hidden xl:flex font-mont  flex-col gap-10 w-64">
+                <div class="hidden xl:flex font-mont  flex-col gap-5 w-64">
                     <div class="flex flex-col gap-2 items-center justify-center text-textWhite">
-                        <img src="./img/Group 57.svg" alt="strihani-icon" loading="lazy" class="w-24 h-24 object-cover">
+                        <img src="./img/Group 57.svg" alt="strihani-icon" loading="lazy" class="object-cover">
                         <h2>Stříhání</h2>
                     </div>
                     <div class="flex flex-col gap-2 items-center justify-center text-textWhite">
@@ -248,7 +262,7 @@
     </main>
 
     <!-- Abouts us start -->
-    <section id="about" class="min-h-[50vh] lg:min-h-[50vh]  items-center md:mb-10 overflow-y-hidden">
+    <section id="about" class="max-h-[80vh] lg:max-h-[50vh]  items-center md:mb-10 overflow-y-hidden">
         <!-- title -->
         <div class="flex flex-col items-center justify-center mx-auto mb-10">
             <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">O nás</h3>
@@ -310,7 +324,7 @@
     <!-- About us end -->
     <!-- Pricing start -->
     <section id="pricing">
-        <div className=" flex md:flex-row flex-col gap-4 mx-auto md:w-full justify-center">
+        <div className="flex md:flex-row flex-col gap-4 mx-auto md:w-full justify-center">
             <!-- Title -->
             <div class="flex flex-col items-center justify-center mx-auto">
                 <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Ceník</h3>
@@ -343,7 +357,7 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
 
                     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
                         <div class="flex flex-col gap-2 items-center md:items-start">
@@ -365,7 +379,7 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
                     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
                         <div class="flex flex-col gap-2 items-center md:items-start">
                             <h2 class="text-xl font-medium text-goldenYellow">
@@ -384,7 +398,7 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
                     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
                         <div class="flex flex-col gap-2 items-center md:items-start">
                             <h2 class="text-xl font-medium text-goldenYellow">
@@ -400,7 +414,7 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
                     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
                         <div class="flex flex-col gap-2 items-center md:items-start">
                             <h2 class="text-xl font-medium text-goldenYellow">
@@ -419,38 +433,41 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
-                    <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mt-6 mb-3 md:mb-0">
-                        Střih junior barber </h2>
-                    <div class="flex flex-row gap-3 justify-center md:justify-start text-goldenYellow my-2"> <img
-                            src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                        <p>30 min</p>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
+                    <div class="my-4">
+                        <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mb-3 md:mb-0">
+                            Střih junior barber </h2>
+                        <div class="flex flex-row gap-3 justify-center md:justify-start text-goldenYellow my-2"> <img
+                                src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                            <p>30 min</p>
+                        </div>
+                        <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
+                            <div class="flex flex-col gap-2 items-center md:items-start">
+                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                    Dětský střih - děti ve věku 5 - 12 let
+                                </p>
+                            </div>
+                            <div class="flex flex-col text-center pt-3 md:pt-0">
+                                <p class="text-xl text-goldenYellow justify-end">
+                                    400 Kč
+                                </p>
+                            </div>
+                        </div>
+                        <div
+                            class="flex md:flex-row flex-col md:justify-between justify-center items-center mt-4 md:mt-0">
+                            <div class="flex flex-col items-center md:items-start">
+                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                    Dětský střih - děti ve věku 1 - 15 let
+                                </p>
+                            </div>
+                            <div class="flex flex-col text-center pt-3 md:pt-0">
+                                <p class="text-xl text-goldenYellow justify-end ">
+                                    500 Kč
+                                </p>
+                            </div>
+                        </div>
                     </div>
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                Dětský střih - děti ve věku 5 - 12 let
-                            </p>
-                        </div>
-                        <div class="flex flex-col text-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-end">
-                                400 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <div class="flex md:flex-row flex-col justify-between mb-6 mt-4 md:mt-0">
-                        <div class="flex flex-col items-center md:items-start">
-                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                Dětský střih - děti ve věku 1 - 15 let
-                            </p>
-                        </div>
-                        <div class="flex flex-col text-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-end ">
-                                500 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
                     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
                         <div class="flex flex-col gap-2 items-center md:items-start">
                             <h2 class=" text-xl font-medium text-goldenYellow text-center md:text-start">
@@ -471,7 +488,7 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
                     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
                         <div class="flex flex-col gap-2 items-center md:items-start">
                             <h2 class="text-xl font-medium text-goldenYellow">
@@ -487,34 +504,36 @@
                             </p>
                         </div>
                     </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
-                    <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mt-6 mb-3 md:mb-0">
-                        Barvení vlasů, melíry pro gentlemany </h2>
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                Zesvětlení vlasů
-                            </p>
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
+                    <div class="my-4">
+                        <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mb-3 md:mb-0">
+                            Barvení vlasů, melíry pro gentlemany </h2>
+                        <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
+                            <div class="flex flex-col gap-2 items-center md:items-start">
+                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                    Zesvětlení vlasů
+                                </p>
+                            </div>
+                            <div class="flex flex-col text-center pt-3 md:pt-0">
+                                <p class="text-xl text-goldenYellow justify-end">
+                                    500 Kč
+                                </p>
+                            </div>
                         </div>
-                        <div class="flex flex-col text-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-end">
-                                500 Kč
-                            </p>
+                        <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
+                            <div class="flex flex-col items-center md:items-start">
+                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
+                                    Přeliv
+                                </p>
+                            </div>
+                            <div class="flex flex-col text-center pt-3 md:pt-0">
+                                <p class="text-xl text-goldenYellow justify-end ">
+                                    600 Kč
+                                </p>
+                            </div>
                         </div>
                     </div>
-                    <div class="flex md:flex-row flex-col justify-between mb-6 mt-4 md:mt-0">
-                        <div class="flex flex-col items-center md:items-start">
-                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                Přeliv
-                            </p>
-                        </div>
-                        <div class="flex flex-col text-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-end ">
-                                600 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mb-2">
+                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 ">
                     <div class="flex md:flex-row flex-col md:justify-between justify-center items-center md:my-6">
                         <div class="flex flex-col gap-2">
                             <h2 class="text-xl font-medium text-goldenYellow">
@@ -541,14 +560,14 @@
             </div>
             <!-- Card -->
             <div
-                class="flex md:h-[250px] md:w-[595px] mx-auto rounded-tl-full md:rounded-bl-full rounded-tr-full bg-lightBlack mb-24 ">
+                class="flex md:h-[250px] md:w-[640px] mx-auto rounded-tl-full md:rounded-bl-full rounded-tr-full bg-lightBlack mb-24 ">
                 <div class="w-full m-8 md:m-5">
                     <div class="flex md:flex-row flex-col  mb-2 gap-6">
                         <div class="flex flex-col w-full items-center md:w-1/3">
                             <img id="employee-photo" src="" alt="employee-photo" loading="lazy"
                                 class="rounded-full object-cover h-44 w-44 md:h-52 md:w-52" />
                         </div>
-                        <div class="flex flex-col w-full md:w-2/3 items-center md:items-start text-goldenYellow max-w-xs"
+                        <div class="flex flex-col w-full md:w-2/3 items-center md:items-start text-goldenYellow max-w-sm"
                             style="height: 200px;">
                             <h3 id="employee-name" class="pb-2 font-mont mx-auto font-normal text-lg lg:mx-0 "></h3>
                             <p id="employee-description"
@@ -576,40 +595,49 @@
     <!-- Our team end -->
     <!-- Gallery start -->
     <section id="gallery">
-        <div class="flex items-center justify-center min-h-[70vh] bg-lightBlack">
-            <div class="bg-lightBlack p-6 space-y-6 md:p-16">
+        <div class="flex items-center justify-center max-h-[90vh] md:max-h-[75vh] bg-lightBlack">
+            <div class="bg-lightBlack p-6 space-y-6 md:p-16 max-w-5xl mx-auto">
                 <!-- Title -->
                 <div class="flex flex-col items-center justify-center mx-auto">
                     <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Galerie</h3>
-                    <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
+                    <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class="object-cover">
                 </div>
-                <div class="flex flex-col justify-between space-y-5 md:flex-row md:space-y-0"></div>
                 <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3">
-                    <div class="relative group">
+                    <!-- Gallery items -->
+                    <div class="relative group cursor-pointer" onclick="openLightbox('img/right_11zon.webp')">
                         <img src="img/right_11zon.webp" alt="sofa" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
                     </div>
-                    <div class="relative group">
+                    <div class="relative group cursor-pointer"
+                        onclick="openLightbox('img/andrea-donato-MNu0n-3BIKs-unsplash_11zon.webp')">
                         <img src="img/andrea-donato-MNu0n-3BIKs-unsplash_11zon.webp" alt="tools" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
                     </div>
-                    <div class="relative group">
+                    <div class="relative group cursor-pointer" onclick="openLightbox('img/al_11zon.webp')">
                         <img src="img/al_11zon.webp" alt="styling" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
                     </div>
-                    <div class="relative group">
-                        <img src="img/delfina-pan-8esvJeVUdes-unsplash_11zon.webp" loading="lazy" alt="drying"
-                            class="w-72 h-56 object-cover rounded-xl" />
+                    <div class="relative group cursor-pointer" onclick="openLightbox('img/hai.webp')">
+                        <img src="img/hai.webp" loading="lazy" alt="tattoo" class="w-72 h-56 object-cover rounded-xl" />
                     </div>
-                    <div class="relative group">
+                    <div class="relative group cursor-pointer" onclick="openLightbox('img/antonio_11zon.webp')">
                         <img src="img/antonio_11zon.webp" alt="beard" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
                     </div>
-                    <div class="relative group">
+                    <div class="relative group cursor-pointer" onclick="openLightbox('img/left_11zon.webp')">
                         <img src="img/left_11zon.webp" alt="interier" loading="lazy"
                             class="w-72 h-56 object-cover rounded-xl" />
                     </div>
                 </div>
+            </div>
+        </div>
+
+        <!-- Lightbox for big image -->
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+            <div class="flex items-center justify-center w-full h-full" onclick="closeLightbox()">
+                <img id="lightboxImage" src="" alt="Enlarged Image"
+                    class="w-[90%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[30%] max-h-[70%] rounded-xl"
+                    onclick="event.stopPropagation()">
             </div>
         </div>
     </section>
