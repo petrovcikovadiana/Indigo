@@ -1,18 +1,18 @@
 // Data
 const employees = [
   {
-    name: "Markéta",
-    description:
-      "Markéta se holičství věnuje více než 10 let a specializuje se na klasické pánské účesy a precizní úpravu vousů. Její pozornost k detailu a cit pro styl dělají z každého střihu jedinečný zážitek.",
-    photo: "./img/woman.webp",
-    signature: "Markéta",
-  },
-  {
     name: "Radek",
     description:
       "Radek je zkušený barber s vášní pro klasické pánské střihy a precizní úpravu vousů. Díky své pozornosti k detailu a citlivému přístupu vytváří účesy a vousy, které zaručují stylový a upravený vzhled.",
     photo: "./img/man_11zon.webp",
     signature: "Radek",
+  },
+  {
+    name: "Markéta",
+    description:
+      "Markéta se holičství věnuje více než 10 let a specializuje se na klasické pánské účesy a precizní úpravu vousů. Její pozornost k detailu a cit pro styl dělají z každého střihu jedinečný zážitek.",
+    photo: "./img/woman.webp",
+    signature: "Markéta",
   },
   {
     name: "Marka",
