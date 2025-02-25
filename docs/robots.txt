@@ -1,4 +1,4 @@
 User-agent: *
 Disallow:
 
-Sitemap: https://www.indigo.cz/sitemap.xml
+Sitemap: https://www.barbershopindigo.cz/sitemap.xml

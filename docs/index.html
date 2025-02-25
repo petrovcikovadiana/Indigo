@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Barbershop Indigo</title>
     <meta name="description"
-        content="Stylový barbershop v srdci města nabízí prvotřídní pánské střihy, úpravu vousů a luxusní péči v moderním prostředí. Rezervujte si svůj termín online a zažijte profesionální služby našich barberů">
+        content="Stylový barbershop v srdci města nabízí prvotřídní pánské střihy, úpravu vousů a luxusní péči v moderním prostředí.">
     <meta name="keywords" content="barbershop, holení, péče o vousy, barbershop indigo, indigo">
     <link rel="stylesheet" href="style.css">
     <link rel="icon" href="./img/favicon.png" type="image/png">
@@ -19,7 +19,13 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
         rel="stylesheet">
+    <!-- GSC -->
+    <meta name="google-site-verification" content="xTGoGlQpKAJo9HHg6Eri72cCLENDYJIz0lZwrmljG28" />
+    <!-- seznam -->
+    <meta name="seznam-wmt" content="N2ttgJK4eDdFTfIMH0wSgiEjCHShZ3IN" />
     <script src="https://unpkg.com/feather-icons"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jwt-decode/build/jwt-decode.min.js"></script>
+
     <script defer>
         document.addEventListener("DOMContentLoaded", function () {
             const menuToggle = document.getElementById("menu-toggle");
@@ -64,7 +70,149 @@
             lightbox.classList.add("hidden");
             document.body.classList.remove("overflow-hidden");
         }
+
+
+
     </script>
+    <script>
+
+        // gallery 
+
+        document.addEventListener('DOMContentLoaded', () => {
+            const galleryGrid = document.getElementById('galleryGrid');
+
+            // Fetch photos from backend
+            async function fetchPhotos() {
+                const tenantId = "ecf0167ee40f57fc"
+                try {
+                    const response = await fetch(`https://eclipse.cloudylake.io/api/v1/tenants/${tenantId}/galleries`, {
+                        headers: {
+                            method: "GET",
+
+                            "Content-Type": "application/json",
+                        },
+                    });
+                    const data = await response.json();
+
+                    if (data.status === 'success' && data.data.photos) {
+                        renderGallery(data.data.photos);
+                    } else {
+                        console.error('Failed to fetch gallery photos');
+                    }
+                } catch (error) {
+                    console.error('Error fetching photos:', error);
+                }
+            }
+
+            // Render gallery photos
+            function renderGallery(photos) {
+                galleryGrid.innerHTML = ''; // Clear current gallery
+                photos.forEach((photo) => {
+                    const photoDiv = document.createElement('div');
+                    photoDiv.className = 'relative group cursor-pointer';
+                    photoDiv.setAttribute('onclick', `openLightbox('https://eclipse.cloudylake.io/img/galleries/${photo.imageName}')`);
+
+                    photoDiv.innerHTML = `
+            <img src="https://eclipse.cloudylake.io/img/galleries/${photo.imageName}" 
+ alt="Gallery" loading="lazy" 
+             class="w-72 h-56 object-cover rounded-xl" />
+      `;
+                    galleryGrid.appendChild(photoDiv);
+                });
+            }
+
+            // Lightbox functionality
+            window.openLightbox = (imagePath) => {
+                const lightbox = document.getElementById('lightbox');
+                const lightboxImage = document.getElementById('lightboxImage');
+                lightboxImage.src = imagePath;
+                lightbox.classList.remove('hidden');
+            };
+
+            window.closeLightbox = () => {
+                const lightbox = document.getElementById('lightbox');
+                lightbox.classList.add('hidden');
+            };
+
+            // Fetch photos on page load
+            fetchPhotos();
+        });
+
+
+
+        document.addEventListener("DOMContentLoaded", () => {
+            const priceListContainer = document.getElementById("priceListContainer");
+
+            const fetchPriceLists = async () => {
+                const tenantId = "ecf0167ee40f57fc";
+
+                try {
+                    const response = await fetch(
+                        `https://eclipse.cloudylake.io/api/v1/tenants/${tenantId}/priceLists`,
+                        {
+                            method: "GET",
+                            headers: {
+                                "Content-Type": "application/json",
+                            },
+                        }
+                    );
+
+                    if (!response.ok) {
+                        throw new Error("Chyba při načítání ceníku.");
+                    }
+
+                    const data = await response.json();
+
+                    if (data && data.data && data.data.priceLists) {
+                        // Sorting by order
+                        const sortedPriceLists = data.data.priceLists.sort(
+                            (a, b) => a.order - b.order
+                        );
+                        renderPriceList(sortedPriceLists);
+
+                    }
+
+                } catch (error) {
+                    console.error("Chyba při načítání ceníku:", error);
+                }
+            };
+
+            const renderPriceList = (priceLists) => {
+                priceLists.forEach((item) => {
+                    const clockHTML = item.itemDuration
+                        ? `<div class="flex flex-row gap-3 text-goldenYellow">
+                <img src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
+                <p>${item.itemDuration}</p>
+               </div>`
+                        : "";
+
+                    const itemHTML = `
+        <div class="bg-background rounded-2xl">
+          <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-5 mx-10">
+            <div class="flex flex-col gap-2 items-center md:items-start">
+              <h2 class="text-xl font-medium text-goldenYellow">${item.itemName || ""}</h2>
+              ${clockHTML} <!-- Zde je podmíněné vložení ikonky hodin -->
+              <p class="max-w-md text-center md:text-start text-sm leading-5 tracking-wide text-textWhite">
+                ${item.itemDescription || ""}
+              </p>
+            </div>
+            <div class="flex flex-col justify-center pt-3 md:pt-0">
+              <p class="text-xl text-goldenYellow justify-center">${item.itemPrice || ""} Kč</p>
+            </div>
+          </div>
+          <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 mx-10">
+        </div>`;
+                    priceListContainer.insertAdjacentHTML("beforeend", itemHTML);
+                });
+            };
+
+
+            fetchPriceLists();
+        });
+
+
+    </script>
+
     <style>
         .columns-1 {
             column-count: 1;
@@ -323,234 +471,27 @@
         </div>
     </section>
     <!-- About us end -->
+
     <!-- Pricing start -->
     <section id="pricing">
-        <div className="flex md:flex-row flex-col gap-4 mx-auto md:w-full justify-center">
+        <div class="flex flex-col gap-4 mx-auto md:w-full justify-center">
             <!-- Title -->
             <div class="flex flex-col items-center justify-center mx-auto">
                 <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Ceník</h3>
-                <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
+                <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class="object-cover">
             </div>
-            <!-- logo -->
-            <div class="flex w-96 md:w-[746px] mx-auto rounded-xl mt-10 mb-10 border-2 border-goldenYellow">
-                <div class="w-full bg-background rounded-2xl m-8 md:m-10">
-                    <div class="flex flex-col items-center mx-auto">
-                        <img src="./img/logo.svg" alt="logo barber" loading="lazy"
-                            class="object-fit h-24 md:h-32 md:w-32 " />
-                    </div>
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <h2 class="text-xl text-center md:text-start font-medium text-goldenYellow">
-                                Exclusive experience (haircut & shaving & whisky & cigara) </h2>
-                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
-                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                                <p> 70 - 90 min</p>
-                            </div>
-                            <p
-                                class="max-w-md text-center md:text-start text-sm leading-5 tracking-wide text-textWhite ">
-                                Pánský střih s mytím, masáž hlavy, holení hot towel, peelingová masáž obličeje, úprava
-                                kontur, ošetření tváře po holení, sklenka whisky & doutník
-                            </p>
-                        </div>
-                        <div class="flex flex-col justify-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-center">
-                                1390 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <h2 class="text-xl text-center md:text-start font-medium text-goldenYellow">
-                                Classic grooming (haircut & towel shaving) </h2>
-                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
-                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                                <p>40 - 60 min</p>
-                            </div>
-                            <p
-                                class="max-w-md text-center md:text-start text-sm leading-5 tracking-wide  text-textWhite ">
-                                Pánský střih s mytím, masáž hlavy, holení hot towel, ošetření tváře po holení, úprava
-                                chloupků a kontur
-                            </p>
-                        </div>
-                        <div class="flex flex-col justify-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-center">
-                                1000 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <h2 class="text-xl font-medium text-goldenYellow">
-                                Men's haircut </h2>
-                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
-                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                                <p>40 - 60 min</p>
-                            </div>
-                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                Pánský střih s mytím, ošetření vlasů
-                            </p>
-                        </div>
-                        <div class="flex flex-col justify-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-center">
-                                650 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <h2 class="text-xl font-medium text-goldenYellow">
-                                Stříhání + hair tattoo </h2>
-                            <p
-                                class="max-w-md text-sm text-center md:text-start leading-5 tracking-wide  text-textWhite ">
-                                Fresh cut dle výběru, hair tattoo, úprava břitvou, styling
-                            </p>
-                        </div>
-                        <div class="flex flex-col justify-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-center">
-                                700 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <h2 class="text-xl font-medium text-goldenYellow">
-                                Klasický střih </h2>
-                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
-                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                                <p>30 min</p>
-                            </div>
-                            <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                Pánský střih strojkem
-                            </p>
-                        </div>
-                        <div class="flex flex-col justify-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-center">
-                                500 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-                    <div class="my-4">
-                        <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mb-3 md:mb-0">
-                            Střih junior barber </h2>
-                        <div class="flex flex-row gap-3 justify-center md:justify-start text-goldenYellow my-2"> <img
-                                src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                            <p>30 min</p>
-                        </div>
-                        <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
-                            <div class="flex flex-col gap-2 items-center md:items-start">
-                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                    Dětský střih - děti ve věku 5 - 12 let
-                                </p>
-                            </div>
-                            <div class="flex flex-col text-center pt-3 md:pt-0">
-                                <p class="text-xl text-goldenYellow justify-end">
-                                    400 Kč
-                                </p>
-                            </div>
-                        </div>
-                        <div
-                            class="flex md:flex-row flex-col md:justify-between justify-center items-center mt-4 md:mt-0">
-                            <div class="flex flex-col items-center md:items-start">
-                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                    Dětský střih - děti ve věku 1 - 15 let
-                                </p>
-                            </div>
-                            <div class="flex flex-col text-center pt-3 md:pt-0">
-                                <p class="text-xl text-goldenYellow justify-end ">
-                                    500 Kč
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <h2 class=" text-xl font-medium text-goldenYellow text-center md:text-start">
-                                Hot towel wet shave (holení vousů metodou hot towel) </h2>
-                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
-                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                                <p>30 min</p>
-                            </div>
-                            <p
-                                class="max-w-xs text-sm text-center md:text-start leading-5 tracking-wide  text-textWhite ">
-                                Holení vousů speciální metodou "hot towel" - napářka horkým ručníkem, ošetření tváře po
-                                holení
-                            </p>
-                        </div>
-                        <div class="flex flex-col justify-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-center">
-                                650 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center my-6">
-                        <div class="flex flex-col gap-2 items-center md:items-start">
-                            <h2 class="text-xl font-medium text-goldenYellow">
-                                Barvení vousů </h2>
-                            <div class="flex flex-row gap-3 text-goldenYellow"> <img
-                                    src="./img/clock-seven-svgrepo-com.svg" class="w-6 h-6" alt="clock" />
-                                <p>30 min</p>
-                            </div>
-                        </div>
-                        <div class="flex flex-col justify-center pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-center">
-                                250 Kč - 350 Kč
-                            </p>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0">
-                    <div class="my-4">
-                        <h2 class="text-xl font-medium text-goldenYellow md:text-start text-center mb-3 md:mb-0">
-                            Barvení vlasů, melíry pro gentlemany </h2>
-                        <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
-                            <div class="flex flex-col gap-2 items-center md:items-start">
-                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                    Zesvětlení vlasů
-                                </p>
-                            </div>
-                            <div class="flex flex-col text-center pt-3 md:pt-0">
-                                <p class="text-xl text-goldenYellow justify-end">
-                                    600 Kč
-                                </p>
-                            </div>
-                        </div>
-                        <div class="flex md:flex-row flex-col md:justify-between justify-center items-center">
-                            <div class="flex flex-col items-center md:items-start">
-                                <p class="max-w-xs text-sm leading-5 tracking-wide  text-textWhite ">
-                                    Přeliv
-                                </p>
-                            </div>
-                            <div class="flex flex-col text-center pt-3 md:pt-0">
-                                <p class="text-xl text-goldenYellow justify-end ">
-                                    600 Kč
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                    <hr class="h-px w-80 md:w-[660px] bg-textGrey border-0 ">
-                    <div class="flex md:flex-row flex-col md:justify-between justify-center items-center md:my-6">
-                        <div class="flex flex-col gap-2">
-                            <h2 class="text-xl font-medium text-goldenYellow">
-                                Ošetření horkou párou + maska </h2>
-                        </div>
-                        <div class="flex flex-col justify-end pt-3 md:pt-0">
-                            <p class="text-xl text-goldenYellow justify-end">
-                                350 Kč
-                            </p>
-                        </div>
-                    </div>
+            <!-- Pricing list -->
+            <div id="priceListContainer"
+                class="flex flex-col w-96 md:w-[746px] mx-auto rounded-xl mt-6 mb-10 border-2 border-goldenYellow">
+                <div class="flex flex-col items-center mx-auto my-6 z-20">
+                    <img src="./img/logo.svg" alt="logo barber" loading="lazy"
+                        class="object-fit h-24 md:h-32 md:w-32 " />
                 </div>
             </div>
         </div>
     </section>
     <!-- Pricing end -->
+
     <!-- Our team start -->
     <section id="team">
         <div class="flex flex-col mx-auto md:w-full justify-center md:my-5">
@@ -578,11 +519,12 @@
                             <p id="employee-signature" class="font-windsong text-5xl"></p>
                         </div>
                     </div>
-                    <div class="flex flex-row gap-6 mt-10 items-center justify-center mx-auto">
+                    <div
+                        class="flex flex-row gap-6 mt-10 items-center justify-center mx-auto employee-selector-container">
                         <!-- Add data to manual switch -->
-                        <img src="./img/man_11zon.webp" alt="radek" loading="lazy"
+                        <img id="employee-photo" alt="radek" loading="lazy"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="0">
-                        <img src="./img/woman.webp" alt="marketa" loading="lazy"
+                        <img src="" alt="marketa" loading="lazy"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="1">
                         <img src="./img/Marka.webp" alt="marka" loading="lazy"
                             class="object-cover w-16 h-16 rounded-full employee-selector" data-index="2">
@@ -593,16 +535,15 @@
     </section>
     <!-- Our team end -->
     <!-- Gallery start -->
-    <section id="gallery">
+    <!-- <section id="gallery">
         <div class="flex items-center justify-center max-h-[100vh] md:max-h-[100vh] bg-lightBlack">
-            <div class="bg-lightBlack p-6 space-y-6 md:p-16 max-w-5xl mx-auto">
-                <!-- Title -->
-                <div class="flex flex-col items-center justify-center mx-auto">
+            <div class="bg-lightBlack p-6 space-y-6 md:p-16 max-w-5xl mx-auto"> -->
+    <!-- Title -->
+    <!-- <div class="flex flex-col items-center justify-center mx-auto">
                     <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Galerie</h3>
                     <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class="object-cover">
                 </div>
                 <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3">
-                    <!-- Gallery items -->
                     <div class="relative group cursor-pointer" onclick="openLightbox('img/right.jpeg')">
                         <img src="img/right.jpeg" alt="sofa" loading="lazy" class="w-72 h-56 object-cover rounded-xl" />
                     </div>
@@ -630,6 +571,34 @@
             </div>
         </div>
 
+        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
+            <div class="flex items-center justify-center w-full h-full" onclick="closeLightbox()">
+                <img id="lightboxImage" src="" alt="Enlarged Image"
+                    class="w-[90%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[30%] max-h-[70%] rounded-xl"
+                    onclick="event.stopPropagation()">
+            </div>
+        </div>
+    </section> -->
+    <!-- Gallery end -->
+
+
+
+
+    <section id="gallery">
+        <div class="flex items-center justify-center max-h-[100vh] md:max-h-[100vh] bg-lightBlack">
+            <div class="bg-lightBlack p-6 space-y-6 md:p-16 max-w-5xl mx-auto">
+                <!-- Title -->
+                <div class="flex flex-col items-center justify-center mx-auto">
+                    <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Galerie</h3>
+                    <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class="object-cover">
+                </div>
+                <!-- Dynamic gallery grid -->
+                <div id="galleryGrid" class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3">
+                    <!-- Gallery items will be injected here -->
+                </div>
+            </div>
+        </div>
+
         <!-- Lightbox for big image -->
         <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
             <div class="flex items-center justify-center w-full h-full" onclick="closeLightbox()">
@@ -639,7 +608,20 @@
             </div>
         </div>
     </section>
-    <!-- Gallery end -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     <!-- Footer start -->
     <footer id="contact" class="bg-background">
         <div class="mx-auto w-full max-w-screen-xl pt-5 lg:pt-8">

@@ -1,6 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ["./docs/*.{html,js}"],
+  safelist: [
+    "mx-10", // Explicitně zahrňte třídu, aby nebyla odstraněna
+  ],
   theme: {
     screens: {
       sm: "480px",
