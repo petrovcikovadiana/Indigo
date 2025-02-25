@@ -1,4 +1,4 @@
-# 💈 Barbershop Indigo – Modern Presentation Website
+# 💈 Barbershop Indigo 
 
 🚀 **Barbershop Indigo** is a stylish and fully responsive presentation website built with **HTML, Tailwind CSS, and JavaScript**. It features a dynamic **pricing list** and **photo gallery**, which can be managed via a **custom CMS admin panel**.
 
