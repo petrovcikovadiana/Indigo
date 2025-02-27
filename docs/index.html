@@ -71,16 +71,11 @@
             document.body.classList.remove("overflow-hidden");
         }
 
-
-
     </script>
     <script>
-
         // gallery 
-
         document.addEventListener('DOMContentLoaded', () => {
             const galleryGrid = document.getElementById('galleryGrid');
-
             // Fetch photos from backend
             async function fetchPhotos() {
                 const tenantId = "ecf0167ee40f57fc"
@@ -88,7 +83,6 @@
                     const response = await fetch(`https://eclipse.cloudylake.io/api/v1/tenants/${tenantId}/galleries`, {
                         headers: {
                             method: "GET",
-
                             "Content-Type": "application/json",
                         },
                     });
@@ -103,7 +97,6 @@
                     console.error('Error fetching photos:', error);
                 }
             }
-
             // Render gallery photos
             function renderGallery(photos) {
                 galleryGrid.innerHTML = ''; // Clear current gallery
@@ -120,7 +113,6 @@
                     galleryGrid.appendChild(photoDiv);
                 });
             }
-
             // Lightbox functionality
             window.openLightbox = (imagePath) => {
                 const lightbox = document.getElementById('lightbox');
@@ -133,19 +125,14 @@
                 const lightbox = document.getElementById('lightbox');
                 lightbox.classList.add('hidden');
             };
-
             // Fetch photos on page load
             fetchPhotos();
         });
 
-
-
         document.addEventListener("DOMContentLoaded", () => {
             const priceListContainer = document.getElementById("priceListContainer");
-
             const fetchPriceLists = async () => {
                 const tenantId = "ecf0167ee40f57fc";
-
                 try {
                     const response = await fetch(
                         `https://eclipse.cloudylake.io/api/v1/tenants/${tenantId}/priceLists`,
@@ -156,11 +143,9 @@
                             },
                         }
                     );
-
                     if (!response.ok) {
                         throw new Error("Chyba při načítání ceníku.");
                     }
-
                     const data = await response.json();
 
                     if (data && data.data && data.data.priceLists) {
@@ -350,7 +335,7 @@
     <main>
         <!-- Hero start -->
         <section id="home"
-            class="max-h-[50vh] lg:max-h-[75vh] md:mb-5 flex items-center md:pt-32 overflow-y-hidden pt-32 ">
+            class="max-h-[50vh] lg:max-h-[75vh] mb-4 md:mb-6 flex items-center md:pt-32 overflow-y-hidden pt-32 ">
             <div class="md:container mx-auto flex flex-row items-center justify-center md:px-44 2xl:px-56 md:gap-32">
                 <!-- Left container -->
                 <div class="flex flex-col gap-y-8 md:gap-x-12 md:pt-24">
@@ -411,14 +396,14 @@
     </main>
 
     <!-- Abouts us start -->
-    <section id="about" class="max-h-[80vh] lg:max-h-[50vh]  items-center md:mb-10 overflow-y-hidden">
+    <section id="about" class="max-h-[80vh] lg:max-h-[55vh]  items-center md:mb-10 overflow-y-hidden">
         <!-- title -->
         <div class="flex flex-col items-center justify-center mx-auto mb-10">
             <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">O nás</h3>
             <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class=" object-cover">
         </div>
         <div class="md:container mx-auto items-center justify-center flex flex-row md:px-44 xl:gap-32">
-            <!-- Right container -->
+            <!-- Left container -->
             <div class="hidden xl:flex flex-1 max-w-[320px] lg:max-w-[482px]">
                 <div class="hidden lg:flex gap-4">
                     <div>
@@ -431,7 +416,7 @@
                     </div>
                 </div>
             </div>
-            <!-- Left container -->
+            <!-- Right container -->
             <div class="flex flex-col gap-y-8 xl:items-center md:gap-x-12">
                 <!-- Introduction text -->
                 <div class="flex-1 text-center font-mont xl:text-left">
@@ -443,7 +428,7 @@
                             <span class="text-goldenYellow"> moderním <br> stylu</span>
                         </h3>
                     </div>
-                    <h3 class="mb-8 max-w-md font-mont text-textWhite mx-auto px-10 xl:px-0 xl:mx-0">
+                    <h3 class="mb-5 max-w-lg font-mont text-textWhite mx-auto px-10 xl:px-0 xl:mx-0">
                         Jsme hrdí na svou práci a naším cílem je poskytovat špičkové služby každému, kdo vstoupí do
                         našich dveří. U nás zažijete nejen dokonalý střih a úpravu vousů, ale i relaxační atmosféru, kde
                         si můžete odpočinout a užít si chvíli pro sebe.
@@ -483,7 +468,7 @@
             <!-- Pricing list -->
             <div id="priceListContainer"
                 class="flex flex-col w-96 md:w-[746px] mx-auto rounded-xl mt-6 mb-10 border-2 border-goldenYellow">
-                <div class="flex flex-col items-center mx-auto my-6 z-20">
+                <div class="flex flex-col items-center mx-auto my-6 z-10">
                     <img src="./img/logo.svg" alt="logo barber" loading="lazy"
                         class="object-fit h-24 md:h-32 md:w-32 " />
                 </div>
@@ -535,57 +520,8 @@
     </section>
     <!-- Our team end -->
     <!-- Gallery start -->
-    <!-- <section id="gallery">
-        <div class="flex items-center justify-center max-h-[100vh] md:max-h-[100vh] bg-lightBlack">
-            <div class="bg-lightBlack p-6 space-y-6 md:p-16 max-w-5xl mx-auto"> -->
-    <!-- Title -->
-    <!-- <div class="flex flex-col items-center justify-center mx-auto">
-                    <h3 class="uppercase text-xl text-textWhite tracking-widest font-bold">Galerie</h3>
-                    <img src="./img/Group 53.svg" alt="beard-icon" loading="lazy" class="object-cover">
-                </div>
-                <div class="grid gap-5 grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-3">
-                    <div class="relative group cursor-pointer" onclick="openLightbox('img/right.jpeg')">
-                        <img src="img/right.jpeg" alt="sofa" loading="lazy" class="w-72 h-56 object-cover rounded-xl" />
-                    </div>
-                    <div class="relative group cursor-pointer"
-                        onclick="openLightbox('img/andrea-donato-MNu0n-3BIKs-unsplash_11zon.webp')">
-                        <img src="img/andrea-donato-MNu0n-3BIKs-unsplash_11zon.webp" alt="tools" loading="lazy"
-                            class="w-72 h-56 object-cover rounded-xl" />
-                    </div>
-                    <div class="relative group cursor-pointer" onclick="openLightbox('img/allef.jpg')">
-                        <img src="img/allef.jpg" alt="styling" loading="lazy"
-                            class="w-72 h-56 object-cover rounded-xl" />
-                    </div>
-                    <div class="relative group cursor-pointer" onclick="openLightbox('img/hai.webp')">
-                        <img src="img/hai.webp" loading="lazy" alt="tattoo" class="w-72 h-56 object-cover rounded-xl" />
-                    </div>
-                    <div class="relative group cursor-pointer" onclick="openLightbox('img/antonio_11zon.webp')">
-                        <img src="img/antonio_11zon.webp" alt="beard" loading="lazy"
-                            class="w-72 h-56 object-cover rounded-xl" />
-                    </div>
-                    <div class="relative group cursor-pointer" onclick="openLightbox('img/left.jpeg')">
-                        <img src="img/left.jpeg" alt="interier" loading="lazy"
-                            class="w-72 h-56 object-cover rounded-xl" />
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="lightbox" class="fixed inset-0 bg-black bg-opacity-75 hidden items-center justify-center z-50">
-            <div class="flex items-center justify-center w-full h-full" onclick="closeLightbox()">
-                <img id="lightboxImage" src="" alt="Enlarged Image"
-                    class="w-[90%] sm:max-w-[70%] md:max-w-[50%] xl:max-w-[30%] max-h-[70%] rounded-xl"
-                    onclick="event.stopPropagation()">
-            </div>
-        </div>
-    </section> -->
-    <!-- Gallery end -->
-
-
-
-
     <section id="gallery">
-        <div class="flex items-center justify-center max-h-[100vh] md:max-h-[100vh] bg-lightBlack">
+        <div class="flex items-center justify-center max-h-[110vh] md:max-h-[100vh] bg-lightBlack">
             <div class="bg-lightBlack p-6 space-y-6 md:p-16 max-w-5xl mx-auto">
                 <!-- Title -->
                 <div class="flex flex-col items-center justify-center mx-auto">
@@ -608,20 +544,7 @@
             </div>
         </div>
     </section>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    <!-- Gallery end -->
     <!-- Footer start -->
     <footer id="contact" class="bg-background">
         <div class="mx-auto w-full max-w-screen-xl pt-5 lg:pt-8">
